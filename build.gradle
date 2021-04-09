@@ -13,6 +13,7 @@ dependencies {
     testCompile('org.junit.jupiter:junit-jupiter-api:5.6.3')
     testRuntime('org.junit.jupiter:junit-jupiter-engine:5.6.3')
     testCompile("org.junit.jupiter:junit-jupiter-params:5.7.0")
+    testCompile('org.mockito:mockito-core:3.7.7')
 }
 
 task wrapper(type: Wrapper) {

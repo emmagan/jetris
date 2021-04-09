@@ -16,6 +16,12 @@ public class FigureFactory {
         counts = new int[7];
     }
 
+    /* Just for testing! */
+    FigureFactory(Random rand) {
+        r = rand;
+        counts = new int[7];
+    }
+
     Figure getRandomFigure() {
         Figure f;
         int i = r.nextInt(7);
