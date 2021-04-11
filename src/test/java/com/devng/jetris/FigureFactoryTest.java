@@ -373,4 +373,106 @@ public class FigureFactoryTest {
         assertArrayEquals(new int[]{1, 0, 1, 0}, f.arrX);
         assertArrayEquals(new int[]{0,0,0,0,0,0,1}, figureFactory.getCounts());
     }
+
+    @Test
+    public void testGetRandomFigure2RepeatsFirstPosition() {
+        when(r.nextInt(7)).thenReturn(0,0,1);
+        when(r.nextInt(4)).thenReturn(0,1);
+
+        Figure f1 = figureFactory.getRandomFigure();
+        Figure f2 = figureFactory.getRandomFigure();
+
+        assertEquals(Figure.I, f1.getGridVal());
+        assertEquals(Figure.I, f2.getGridVal());
+        assertArrayEquals(new int[]{2,0,0,0,0,0,0}, figureFactory.getCounts());
+    }
+
+    @Test
+    public void testGetRandomFigure2RepeatsMiddlePosition() {
+        when(r.nextInt(7)).thenReturn(0,1,1,0);
+        when(r.nextInt(4)).thenReturn(0,1,2);
+
+        Figure f1 = figureFactory.getRandomFigure();
+        Figure f2 = figureFactory.getRandomFigure();
+        Figure f3 = figureFactory.getRandomFigure();
+
+        assertEquals(Figure.I, f1.getGridVal());
+        assertEquals(Figure.T, f2.getGridVal());
+        assertEquals(Figure.T, f3.getGridVal());
+        assertArrayEquals(new int[]{1,2,0,0,0,0,0}, figureFactory.getCounts());
+    }
+
+    @Test
+    public void testGetRandomFigure3RepeatsFirstPosition() {
+        when(r.nextInt(7)).thenReturn(0,0,0,1);
+        when(r.nextInt(4)).thenReturn(0,1,2);
+
+        Figure f1 = figureFactory.getRandomFigure();
+        Figure f2 = figureFactory.getRandomFigure();
+        Figure f3 = figureFactory.getRandomFigure();
+
+        assertEquals(Figure.I, f1.getGridVal());
+        assertEquals(Figure.I, f2.getGridVal());
+        assertEquals(Figure.T, f3.getGridVal());
+        assertArrayEquals(new int[]{2,1,0,0,0,0,0}, figureFactory.getCounts());
+    }
+
+    @Test
+    public void testGetRandomFigure3RepeatsMiddlePosition() {
+        when(r.nextInt(7)).thenReturn(0,0,0,0,0,0,0,1);
+        when(r.nextInt(4)).thenReturn(0,1,2);
+
+        Figure f1 = figureFactory.getRandomFigure();
+        Figure f2 = figureFactory.getRandomFigure();
+        Figure f3 = figureFactory.getRandomFigure();
+
+        assertEquals(Figure.I, f1.getGridVal());
+        assertEquals(Figure.I, f2.getGridVal());
+        assertEquals(Figure.T, f3.getGridVal());
+        assertArrayEquals(new int[]{2,1,0,0,0,0,0}, figureFactory.getCounts());
+    }
+
+
+    @Test
+    public void testGetRandomFigureMultiple3Repeats() {
+        when(r.nextInt(7)).thenReturn(0,0,0,0,0,1,1,1,1,2);
+        when(r.nextInt(4)).thenReturn(0,1,2,3,1);
+
+        Figure f1 = figureFactory.getRandomFigure();
+        Figure f2 = figureFactory.getRandomFigure();
+        Figure f3 = figureFactory.getRandomFigure();
+        Figure f4 = figureFactory.getRandomFigure();
+        Figure f5 = figureFactory.getRandomFigure();
+
+        assertEquals(Figure.I, f1.getGridVal());
+        assertEquals(Figure.I, f2.getGridVal());
+        assertEquals(Figure.T, f3.getGridVal());
+        assertEquals(Figure.T, f4.getGridVal());
+        assertEquals(Figure.O, f5.getGridVal());
+        assertArrayEquals(new int[]{2,2,1,0,0,0,0}, figureFactory.getCounts());
+    }
+
+    @Test
+    public void testGetRandomFigure3RepeatsBrokenUp() {
+        when(r.nextInt(7)).thenReturn(4,4,4,3,3,4,4,4,3);
+        when(r.nextInt(4)).thenReturn(0,1,2,3,1);
+
+        Figure f1 = figureFactory.getRandomFigure();
+        Figure f2 = figureFactory.getRandomFigure();
+        Figure f3 = figureFactory.getRandomFigure();
+        Figure f4 = figureFactory.getRandomFigure();
+        Figure f5 = figureFactory.getRandomFigure();
+        Figure f6 = figureFactory.getRandomFigure();
+        Figure f7 = figureFactory.getRandomFigure();
+
+        assertEquals(Figure.J, f1.getGridVal());
+        assertEquals(Figure.J, f2.getGridVal());
+        assertEquals(Figure.L, f3.getGridVal());
+        assertEquals(Figure.L, f4.getGridVal());
+        assertEquals(Figure.J, f5.getGridVal());
+        assertEquals(Figure.J, f6.getGridVal());
+        assertEquals(Figure.L, f7.getGridVal());
+
+        assertArrayEquals(new int[]{0,0,0,3,4,0,0}, figureFactory.getCounts());
+    }
 }
