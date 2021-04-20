@@ -160,7 +160,7 @@ public class JetrisMainFrame extends JFrame {
     public JetrisMainFrame() {
         super(GV.NAME + " " + GV.VERSION);
 
-        SplashScreen sp = new SplashScreen();
+        com.devng.jetris.SplashScreen sp = new SplashScreen();
 
         setIconImage(loadImage(GV.IMG_FOLDER + "jetris16x16.png"));
 

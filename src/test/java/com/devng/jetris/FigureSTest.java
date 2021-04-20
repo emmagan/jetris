@@ -1,5 +1,6 @@
 package com.devng.jetris;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -97,7 +98,7 @@ public class FigureSTest {
 
     @Test
     public void testFigureSGetGridVal() {
-        assertEquals(Figure.S, figureS.getGridVal());
+        Assertions.assertEquals(Figure.S, figureS.getGridVal());
     }
 
     @Test
