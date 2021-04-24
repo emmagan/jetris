@@ -9,27 +9,39 @@ import java.util.Random;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+/*
+Use mock testing as demonstrated by
+1. https://softwareengineering.stackexchange.com/questions/147134/how-should-i-test-randomness
+2. http://jasonjl.me/blog/2014/11/03/testing-the-undeterministic-with-mocking/
+to unit test the FictureFactory class.
+
+FigureFactory is in charge of generating random figures and updating the counts of each figure.
+ */
 public class FigureFactoryTest {
     private FigureFactory figureFactory;
     private Random r;
 
+    /* Pass in our deterministic Random mock in the creation of FigureFactory */
     @BeforeEach
     public void setup() {
         r = mock(Random.class);
         figureFactory = new FigureFactory(r);
     }
 
+    /* Check counts is initially all 0 */
     @Test
     public void testGetCounts() {
         assertArrayEquals(new int[]{0,0,0,0,0,0,0}, figureFactory.getCounts());
     }
 
+    /* Check that resetting counts makes all counts 0 */
     @Test
     public void testResetCountsInitially() {
         figureFactory.resetCounts();
         assertArrayEquals(new int[]{0,0,0,0,0,0,0}, figureFactory.getCounts());
     }
 
+    /* Check that getting random figure makes counts not all 0 */
     @Test
     public void testResetCounts() {
         figureFactory.getRandomFigure();
@@ -38,6 +50,7 @@ public class FigureFactoryTest {
         assertArrayEquals(new int[]{0,0,0,0,0,0,0}, figureFactory.getCounts());
     }
 
+    /* The following methods check that getting Figure I updates count and has proper orientation */
     @Test
     public void testGetRandomFigureI() {
         when(r.nextInt(7)).thenReturn(0);
@@ -86,6 +99,7 @@ public class FigureFactoryTest {
         assertArrayEquals(new int[]{1,0,0,0,0,0,0}, figureFactory.getCounts());
     }
 
+    /* The following methods check that getting Figure T updates count and has proper orientation */
     @Test
     public void testGetRandomFigureT() {
         when(r.nextInt(7)).thenReturn(1);
@@ -134,6 +148,7 @@ public class FigureFactoryTest {
         assertArrayEquals(new int[]{0,1,0,0,0,0,0}, figureFactory.getCounts());
     }
 
+    /* The following methods check that getting Figure O updates count and has proper orientation */
     @Test
     public void testGetRandomFigureO() {
         when(r.nextInt(7)).thenReturn(2);
@@ -182,6 +197,7 @@ public class FigureFactoryTest {
         assertArrayEquals(new int[]{0,0,1,0,0,0,0}, figureFactory.getCounts());
     }
 
+    /* The following methods check that getting Figure L updates count and has proper orientation */
     @Test
     public void testGetRandomFigureL() {
         when(r.nextInt(7)).thenReturn(3);
@@ -230,6 +246,7 @@ public class FigureFactoryTest {
         assertArrayEquals(new int[]{0,0,0,1,0,0,0}, figureFactory.getCounts());
     }
 
+    /* The following methods check that getting Figure J updates count and has proper orientation */
     @Test
     public void testGetRandomFigureJ() {
         when(r.nextInt(7)).thenReturn(4);
@@ -278,6 +295,7 @@ public class FigureFactoryTest {
         assertArrayEquals(new int[]{0,0,0,0,1,0,0}, figureFactory.getCounts());
     }
 
+    /* The following methods check that getting Figure S updates count and has proper orientation */
     @Test
     public void testGetRandomFigureS() {
         when(r.nextInt(7)).thenReturn(5);
@@ -326,6 +344,7 @@ public class FigureFactoryTest {
         assertArrayEquals(new int[]{0,0,0,0,0,1,0}, figureFactory.getCounts());
     }
 
+    /* The following methods check that getting Figure Z updates count and has proper orientation */
     @Test
     public void testGetRandomFigureZ() {
         when(r.nextInt(7)).thenReturn(6);
@@ -374,6 +393,7 @@ public class FigureFactoryTest {
         assertArrayEquals(new int[]{0,0,0,0,0,0,1}, figureFactory.getCounts());
     }
 
+    /* Checks that repeating a figure once consecutively is allowed initially */
     @Test
     public void testGetRandomFigure2RepeatsFirstPosition() {
         when(r.nextInt(7)).thenReturn(0,0,1);
@@ -387,6 +407,7 @@ public class FigureFactoryTest {
         assertArrayEquals(new int[]{2,0,0,0,0,0,0}, figureFactory.getCounts());
     }
 
+    /* Checks that repeating a figure once consecutively is allowed in a later position */
     @Test
     public void testGetRandomFigure2RepeatsMiddlePosition() {
         when(r.nextInt(7)).thenReturn(0,1,1,0);
@@ -402,6 +423,7 @@ public class FigureFactoryTest {
         assertArrayEquals(new int[]{1,2,0,0,0,0,0}, figureFactory.getCounts());
     }
 
+    /* Checks that repeating a figure twice consecutively is not allowed initially */
     @Test
     public void testGetRandomFigure3RepeatsFirstPosition() {
         when(r.nextInt(7)).thenReturn(0,0,0,1);
@@ -417,6 +439,7 @@ public class FigureFactoryTest {
         assertArrayEquals(new int[]{2,1,0,0,0,0,0}, figureFactory.getCounts());
     }
 
+    /* Checks that repeating a figure twice consecutively is not allowed even in middle positions */
     @Test
     public void testGetRandomFigure3RepeatsMiddlePosition() {
         when(r.nextInt(7)).thenReturn(0,0,0,0,0,0,0,1);
@@ -432,7 +455,7 @@ public class FigureFactoryTest {
         assertArrayEquals(new int[]{2,1,0,0,0,0,0}, figureFactory.getCounts());
     }
 
-
+    /* Checks that repeating 2 figures consecutively is not allowed */
     @Test
     public void testGetRandomFigureMultiple3Repeats() {
         when(r.nextInt(7)).thenReturn(0,0,0,0,0,1,1,1,1,2);
@@ -452,6 +475,7 @@ public class FigureFactoryTest {
         assertArrayEquals(new int[]{2,2,1,0,0,0,0}, figureFactory.getCounts());
     }
 
+    /* Checks that repeating 2 figures broken up is allowed */
     @Test
     public void testGetRandomFigure3RepeatsBrokenUp() {
         when(r.nextInt(7)).thenReturn(4,4,4,3,3,4,4,4,3);
