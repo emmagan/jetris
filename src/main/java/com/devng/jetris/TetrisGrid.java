@@ -147,6 +147,25 @@ public class TetrisGrid implements Serializable {
         return dropLines;
     }
 
+    // add setters for testing
+    void setLevel(int l) {
+        level = l;
+    }
+
+    void setLines(int l) {
+        lines = l;
+    }
+
+    void setScore(int s) {
+        score = s;
+    }
+
+    void setDropLines(int[] d) {
+        for (int i = 0; i < dropLines.length; i ++) {
+            dropLines[i] = d[i];
+        }
+    }
+
     void resetStats() {
         lines = score = level = 0;
         for (int i = 0; i < dropLines.length; i++) {

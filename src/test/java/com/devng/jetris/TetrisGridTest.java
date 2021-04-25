@@ -3,6 +3,8 @@ package com.devng.jetris;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TetrisGridTest {
@@ -114,4 +116,50 @@ public class TetrisGridTest {
         assertTrue(tg.isGameOver(f));
     }
 
+    @Test
+    public void testResetStats() {
+        tg.setLines(2);
+        tg.setLevel(3);
+        tg.setScore(2140);
+        tg.setDropLines(new int[]{2,3,4,5});
+        tg.resetStats();
+        assertEquals(0, tg.getLines());
+        assertEquals(0, tg.getLevel());
+        assertEquals(0, tg.getScore());
+        assertTrue(Arrays.equals(new int[]{0,0,0,0}, tg.getDropLines()));
+    }
+
+    @Test
+    public void testUpdateHiScore() {
+        tg.setLines(2);
+        tg.setScore(400);
+        tg.updateHiScore();
+        assertEquals(400, tg.hiScore[0].score);
+        assertEquals(2, tg.hiScore[0].lines);
+        tg.setLines(3);
+        tg.setScore(300);
+        tg.updateHiScore();
+        assertEquals(400, tg.hiScore[0].score);
+        assertEquals(2, tg.hiScore[0].lines);
+        assertEquals(300, tg.hiScore[1].score);
+        assertEquals(3, tg.hiScore[1].lines);
+        tg.setLines(8);
+        tg.setScore(2600);
+        tg.updateHiScore();
+        assertEquals(2600, tg.hiScore[0].score);
+        assertEquals(8, tg.hiScore[0].lines);
+        assertEquals(400, tg.hiScore[1].score);
+        assertEquals(2, tg.hiScore[1].lines);
+        assertEquals(300, tg.hiScore[2].score);
+        assertEquals(3, tg.hiScore[2].lines);
+        tg.setLines(10);
+        tg.setScore(3000);
+        tg.updateHiScore();
+        assertEquals(3000, tg.hiScore[0].score);
+        assertEquals(10, tg.hiScore[0].lines);
+        assertEquals(2600, tg.hiScore[1].score);
+        assertEquals(8, tg.hiScore[1].lines);
+        assertEquals(400, tg.hiScore[2].score);
+        assertEquals(2, tg.hiScore[2].lines);
+    }
 }
