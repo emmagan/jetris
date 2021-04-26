@@ -12,24 +12,28 @@ JETRIS is a Java-based Tetris clone for the desktop. JETRIS is focused on a fast
 
 1. System Requirements
 2. How to Build JETRIS
-  * How to build an Windows EXE
-  * How to build a Mac OS APP and DMG
-  * How to extend JETRIS
-3. Running JETRIS on Your System
-4. How to Play
-5. Scoring System
-6. Saving Your Old HiScores
+   * How to build an Windows EXE
+   * How to build a Mac OS APP and DMG
+   * How to extend JETRIS
+3. Running JETRIS Test Suite
+   * Set up
+   * Common errors
+4. Running JETRIS on Your System
+5. How to Play
+6. Scoring System
+7. Saving Your Old HiScores
+
 
 1. System Requirements
 ----------------------
 
 JETRIS is written in the JAVA programming language, this means that it can be run on any Operating System which has JAVA Runtime Environment (JRE).
 
-You need JRE 1.7.0 or above. You can download JRE for free at www.java.com
+You need JRE 1.8.0 or above. You can download JRE for free at www.java.com
 
 2. How to Build JETRIS
 ----------------------
-If you want to build JETRIS on your local machine you need to install the Java Development Kit (JDK). You need JDK 1.7.0 or above.
+If you want to build JETRIS on your local machine you need to install the Java Development Kit (JDK). You need JDK 1.8.0 or above.
 
 JETRIS uses the Gradle build system, you can build the project locally just by typing the following in the console:
 
@@ -75,7 +79,45 @@ Generate IntelliJ IDEA project:
 ./gradlew idea
 ```
 
-3. Running JETRIS on Your System
+3. Running JETRIS Test Suite
+--------------------------------
+
+### Set up
+
+To run the test suite in IntelliJ, try one of the following options:
+
+* Select the `test.java.com.devng.jetris` folder in the Project tool window and press Ctrl+Shift+F10
+
+* Select Run Tests from the context menu
+
+To run the test suite with coverage in IntelliJ, select Run > Edit Configurations from the main menu.
+Click the `Tests in 'com.devng.jetris'` configuration on the left panel. It may also be called 
+`com.devng.jetris in JETRIS.test`. In the Code Coverage tab, de-select `com.devng.jetris.*` and add classes
+* Figure
+* FigureFactory
+* FigureI
+* FigureJ
+* FigureL
+* FigureO
+* FigureS
+* FigureT
+* FigureZ
+* TetrisGrid
+
+The other classes in the package contain GUI-related functionalities and were excluded from testing.
+Once the configuration is set up, select Run > Run ... with Coverage from the main menu. To generate the
+coverage report, select Run > Generate Coverage Report from the main menu.
+
+### Common errors
+> Execution failed for task ':test'
+> 
+> No tests found for given includes: [com.devng.jetris.*]
+
+In Settings > Build, Execution, Deployment > Build Tools > Gradle, select Build and Run using: `IntelliJ IDEA` and 
+Run Tests using: `IntelliJ IDEA`. This sometimes works, sometimes does not. If not, try invalidating the cache
+and restarting.
+
+4. Running JETRIS on Your System
 --------------------------------
 
 To start JETRIS try one of the following options: 
@@ -91,7 +133,7 @@ To start JETRIS try one of the following options:
 java -jar jetris-1.2.jar
 ```
 
-4. How to Play
+5. How to Play
 --------------
 
 Use the following keys to play JETRIS:
@@ -106,7 +148,7 @@ Use the following keys to play JETRIS:
 * H - View HiScore
 * Esc - Exit
 
-5. Scoring System
+6. Scoring System
 -----------------
 
 * Clearing 1 Line at once, gives You 100 points + 5 x the current level
@@ -118,7 +160,7 @@ Use the following keys to play JETRIS:
 
 The current level is 20 (the highest level) and You clear 4 Lines at once, then You get 1600 + 80 x 20 = 2 x 1600 = 3200. So on level 20 you are making twice as much points as on level 0.
 
-6. Saving Your Old HiScores
+7. Saving Your Old HiScores
 ---------------------------
 
 Copy the old `JETRIS.DAT` File to your new version of JETRIS folder.
