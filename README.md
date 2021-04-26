@@ -117,6 +117,13 @@ In Settings > Build, Execution, Deployment > Build Tools > Gradle, select Build 
 Run Tests using: `IntelliJ IDEA`. This sometimes works, sometimes does not. If not, try invalidating the cache
 and restarting.
 
+> FAILURE: Build failed with an exception.
+> 
+> What went wrong:
+> Could not determine java version from '12.0.2'
+
+To check java version, run `java -version` in the console. Downgrade the version to 1.8 if the version does not match.
+
 4. Running JETRIS on Your System
 --------------------------------
 
