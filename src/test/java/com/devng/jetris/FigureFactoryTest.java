@@ -18,36 +18,38 @@ to unit test the FictureFactory class.
 FigureFactory is in charge of generating random figures and updating the counts of each figure.
  */
 public class FigureFactoryTest {
-    private FigureFactory figureFactory;
+    private FigureFactory ffMock;
+    private FigureFactory ffReal;
     private Random r;
 
     /* Pass in our deterministic Random mock in the creation of FigureFactory */
     @BeforeEach
     public void setup() {
         r = mock(Random.class);
-        figureFactory = new FigureFactory(r);
+        ffMock = new FigureFactory(r);
+        ffReal = new FigureFactory();
     }
 
     /* Check counts is initially all 0 */
     @Test
     public void testGetCounts() {
-        assertArrayEquals(new int[]{0,0,0,0,0,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,0,0,0,0,0,0}, ffReal.getCounts());
     }
 
     /* Check that resetting counts makes all counts 0 */
     @Test
     public void testResetCountsInitially() {
-        figureFactory.resetCounts();
-        assertArrayEquals(new int[]{0,0,0,0,0,0,0}, figureFactory.getCounts());
+        ffMock.resetCounts();
+        assertArrayEquals(new int[]{0,0,0,0,0,0,0}, ffReal.getCounts());
     }
 
     /* Check that getting random figure makes counts not all 0 */
     @Test
     public void testResetCounts() {
-        figureFactory.getRandomFigure();
-        assertFalse(Arrays.equals(new int[]{0,0,0,0,0,0,0}, figureFactory.getCounts()));
-        figureFactory.resetCounts();
-        assertArrayEquals(new int[]{0,0,0,0,0,0,0}, figureFactory.getCounts());
+        ffReal.getRandomFigure();
+        assertFalse(Arrays.equals(new int[]{0,0,0,0,0,0,0}, ffReal.getCounts()));
+        ffReal.resetCounts();
+        assertArrayEquals(new int[]{0,0,0,0,0,0,0}, ffReal.getCounts());
     }
 
     /* The following methods check that getting Figure I updates count and has proper orientation */
@@ -56,11 +58,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(0);
         when(r.nextInt(4)).thenReturn(0);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.I, f.getGridVal());
         assertArrayEquals(new int[]{0, 0, 0, 0}, f.arrX);
         assertArrayEquals(new int[]{0, 1, 2, 3}, f.arrY);
-        assertArrayEquals(new int[]{1,0,0,0,0,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{1,0,0,0,0,0,0}, ffMock.getCounts());
     }
 
     @Test
@@ -68,11 +70,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(0);
         when(r.nextInt(4)).thenReturn(1);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.I, f.getGridVal());
         assertArrayEquals(new int[]{0, 0, 0, 0}, f.arrY);
         assertArrayEquals(new int[]{0, 1, 2, 3}, f.arrX);
-        assertArrayEquals(new int[]{1,0,0,0,0,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{1,0,0,0,0,0,0}, ffMock.getCounts());
     }
 
     @Test
@@ -80,11 +82,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(0);
         when(r.nextInt(4)).thenReturn(2);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.I, f.getGridVal());
         assertArrayEquals(new int[]{0, 0, 0, 0}, f.arrX);
         assertArrayEquals(new int[]{0, 1, 2, 3}, f.arrY);
-        assertArrayEquals(new int[]{1,0,0,0,0,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{1,0,0,0,0,0,0}, ffMock.getCounts());
     }
 
     @Test
@@ -92,11 +94,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(0);
         when(r.nextInt(4)).thenReturn(3);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.I, f.getGridVal());
         assertArrayEquals(new int[]{0, 0, 0, 0}, f.arrY);
         assertArrayEquals(new int[]{0, 1, 2, 3}, f.arrX);
-        assertArrayEquals(new int[]{1,0,0,0,0,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{1,0,0,0,0,0,0}, ffMock.getCounts());
     }
 
     /* The following methods check that getting Figure T updates count and has proper orientation */
@@ -105,11 +107,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(1);
         when(r.nextInt(4)).thenReturn(0);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.T, f.getGridVal());
         assertArrayEquals(new int[]{0, 1, 1, 2}, f.arrX);
         assertArrayEquals(new int[]{0, 0, 1, 0}, f.arrY);
-        assertArrayEquals(new int[]{0,1,0,0,0,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,1,0,0,0,0,0}, ffMock.getCounts());
     }
 
     @Test
@@ -117,11 +119,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(1);
         when(r.nextInt(4)).thenReturn(1);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.T, f.getGridVal());
         assertArrayEquals(new int[]{0, 1, 1, 1}, f.arrX);
         assertArrayEquals(new int[]{1, 0, 1, 2}, f.arrY);
-        assertArrayEquals(new int[]{0,1,0,0,0,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,1,0,0,0,0,0}, ffMock.getCounts());
     }
 
     @Test
@@ -129,11 +131,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(1);
         when(r.nextInt(4)).thenReturn(2);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.T, f.getGridVal());
         assertArrayEquals(new int[]{0, 1, 1, 2}, f.arrX);
         assertArrayEquals(new int[]{1, 0, 1, 1}, f.arrY);
-        assertArrayEquals(new int[]{0,1,0,0,0,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,1,0,0,0,0,0}, ffMock.getCounts());
     }
 
     @Test
@@ -141,11 +143,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(1);
         when(r.nextInt(4)).thenReturn(3);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.T, f.getGridVal());
         assertArrayEquals(new int[]{0, 0, 0, 1}, f.arrX);
         assertArrayEquals(new int[]{0, 1, 2, 1}, f.arrY);
-        assertArrayEquals(new int[]{0,1,0,0,0,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,1,0,0,0,0,0}, ffMock.getCounts());
     }
 
     /* The following methods check that getting Figure O updates count and has proper orientation */
@@ -154,11 +156,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(2);
         when(r.nextInt(4)).thenReturn(0);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.O, f.getGridVal());
         assertArrayEquals(new int[]{0, 0, 1, 1}, f.arrX);
         assertArrayEquals(new int[]{0, 1, 0, 1}, f.arrY);
-        assertArrayEquals(new int[]{0,0,1,0,0,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,0,1,0,0,0,0}, ffMock.getCounts());
     }
 
     @Test
@@ -166,11 +168,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(2);
         when(r.nextInt(4)).thenReturn(1);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.O, f.getGridVal());
         assertArrayEquals(new int[]{0, 0, 1, 1}, f.arrX);
         assertArrayEquals(new int[]{0, 1, 0, 1}, f.arrY);
-        assertArrayEquals(new int[]{0,0,1,0,0,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,0,1,0,0,0,0}, ffMock.getCounts());
     }
 
     @Test
@@ -178,11 +180,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(2);
         when(r.nextInt(4)).thenReturn(2);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.O, f.getGridVal());
         assertArrayEquals(new int[]{0, 0, 1, 1}, f.arrX);
         assertArrayEquals(new int[]{0, 1, 0, 1}, f.arrY);
-        assertArrayEquals(new int[]{0,0,1,0,0,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,0,1,0,0,0,0}, ffMock.getCounts());
     }
 
     @Test
@@ -190,11 +192,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(2);
         when(r.nextInt(4)).thenReturn(3);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.O, f.getGridVal());
         assertArrayEquals(new int[]{0, 0, 1, 1}, f.arrX);
         assertArrayEquals(new int[]{0, 1, 0, 1}, f.arrY);
-        assertArrayEquals(new int[]{0,0,1,0,0,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,0,1,0,0,0,0}, ffMock.getCounts());
     }
 
     /* The following methods check that getting Figure L updates count and has proper orientation */
@@ -203,11 +205,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(3);
         when(r.nextInt(4)).thenReturn(0);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.L, f.getGridVal());
         assertArrayEquals(new int[]{0, 0, 0, 1}, f.arrX);
         assertArrayEquals(new int[]{0, 1, 2, 2}, f.arrY);
-        assertArrayEquals(new int[]{0,0,0,1,0,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,0,0,1,0,0,0}, ffMock.getCounts());
     }
 
     @Test
@@ -215,11 +217,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(3);
         when(r.nextInt(4)).thenReturn(1);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.L, f.getGridVal());
         assertArrayEquals(new int[]{0, 0, 1, 2}, f.arrX);
         assertArrayEquals(new int[]{0, 1, 0, 0}, f.arrY);
-        assertArrayEquals(new int[]{0,0,0,1,0,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,0,0,1,0,0,0}, ffMock.getCounts());
     }
 
     @Test
@@ -227,11 +229,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(3);
         when(r.nextInt(4)).thenReturn(2);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.L, f.getGridVal());
         assertArrayEquals(new int[]{0, 1, 1, 1}, f.arrX);
         assertArrayEquals(new int[]{0, 0, 1, 2}, f.arrY);
-        assertArrayEquals(new int[]{0,0,0,1,0,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,0,0,1,0,0,0}, ffMock.getCounts());
     }
 
     @Test
@@ -239,11 +241,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(3);
         when(r.nextInt(4)).thenReturn(3);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.L, f.getGridVal());
         assertArrayEquals(new int[]{0, 1, 2, 2}, f.arrX);
         assertArrayEquals(new int[]{1, 1, 0, 1}, f.arrY);
-        assertArrayEquals(new int[]{0,0,0,1,0,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,0,0,1,0,0,0}, ffMock.getCounts());
     }
 
     /* The following methods check that getting Figure J updates count and has proper orientation */
@@ -252,11 +254,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(4);
         when(r.nextInt(4)).thenReturn(0);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.J, f.getGridVal());
         assertArrayEquals(new int[]{0, 1, 1, 1}, f.arrX);
         assertArrayEquals(new int[]{2, 0, 1, 2}, f.arrY);
-        assertArrayEquals(new int[]{0,0,0,0,1,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,0,0,0,1,0,0}, ffMock.getCounts());
     }
 
     @Test
@@ -264,11 +266,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(4);
         when(r.nextInt(4)).thenReturn(1);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.J, f.getGridVal());
         assertArrayEquals(new int[]{0, 0, 1, 2}, f.arrX);
         assertArrayEquals(new int[]{0, 1, 1, 1}, f.arrY);
-        assertArrayEquals(new int[]{0,0,0,0,1,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,0,0,0,1,0,0}, ffMock.getCounts());
     }
 
     @Test
@@ -276,11 +278,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(4);
         when(r.nextInt(4)).thenReturn(2);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.J, f.getGridVal());
         assertArrayEquals(new int[]{0, 0, 0, 1}, f.arrX);
         assertArrayEquals(new int[]{0, 1, 2, 0}, f.arrY);
-        assertArrayEquals(new int[]{0,0,0,0,1,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,0,0,0,1,0,0}, ffMock.getCounts());
     }
 
     @Test
@@ -288,11 +290,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(4);
         when(r.nextInt(4)).thenReturn(3);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.J, f.getGridVal());
         assertArrayEquals(new int[]{0, 1, 2, 2}, f.arrX);
         assertArrayEquals(new int[]{0, 0, 0, 1}, f.arrY);
-        assertArrayEquals(new int[]{0,0,0,0,1,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,0,0,0,1,0,0}, ffMock.getCounts());
     }
 
     /* The following methods check that getting Figure S updates count and has proper orientation */
@@ -301,11 +303,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(5);
         when(r.nextInt(4)).thenReturn(0);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.S, f.getGridVal());
         assertArrayEquals(new int[]{0, 1, 1, 2}, f.arrX);
         assertArrayEquals(new int[]{1, 0, 1, 0}, f.arrY);
-        assertArrayEquals(new int[]{0,0,0,0,0,1,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,0,0,0,0,1,0}, ffMock.getCounts());
     }
 
     @Test
@@ -313,11 +315,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(5);
         when(r.nextInt(4)).thenReturn(1);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.S, f.getGridVal());
         assertArrayEquals(new int[]{0, 1, 1, 2}, f.arrY);
         assertArrayEquals(new int[]{0, 0, 1, 1}, f.arrX);
-        assertArrayEquals(new int[]{0,0,0,0,0,1,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,0,0,0,0,1,0}, ffMock.getCounts());
     }
 
     @Test
@@ -325,11 +327,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(5);
         when(r.nextInt(4)).thenReturn(2);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.S, f.getGridVal());
         assertArrayEquals(new int[]{0, 1, 1, 2}, f.arrX);
         assertArrayEquals(new int[]{1, 0, 1, 0}, f.arrY);
-        assertArrayEquals(new int[]{0,0,0,0,0,1,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,0,0,0,0,1,0}, ffMock.getCounts());
     }
 
     @Test
@@ -337,11 +339,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(5);
         when(r.nextInt(4)).thenReturn(3);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.S, f.getGridVal());
         assertArrayEquals(new int[]{0, 1, 1, 2}, f.arrY);
         assertArrayEquals(new int[]{0, 0, 1, 1}, f.arrX);
-        assertArrayEquals(new int[]{0,0,0,0,0,1,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,0,0,0,0,1,0}, ffMock.getCounts());
     }
 
     /* The following methods check that getting Figure Z updates count and has proper orientation */
@@ -350,11 +352,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(6);
         when(r.nextInt(4)).thenReturn(0);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.Z, f.getGridVal());
         assertArrayEquals(new int[]{0, 1, 1, 2}, f.arrX);
         assertArrayEquals(new int[]{0, 0, 1, 1}, f.arrY);
-        assertArrayEquals(new int[]{0,0,0,0,0,0,1}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,0,0,0,0,0,1}, ffMock.getCounts());
     }
 
     @Test
@@ -362,11 +364,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(6);
         when(r.nextInt(4)).thenReturn(1);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.Z, f.getGridVal());
         assertArrayEquals(new int[]{0, 1, 1, 2}, f.arrY);
         assertArrayEquals(new int[]{1, 0, 1, 0}, f.arrX);
-        assertArrayEquals(new int[]{0,0,0,0,0,0,1}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,0,0,0,0,0,1}, ffMock.getCounts());
     }
 
     @Test
@@ -374,11 +376,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(6);
         when(r.nextInt(4)).thenReturn(2);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.Z, f.getGridVal());
         assertArrayEquals(new int[]{0, 1, 1, 2}, f.arrX);
         assertArrayEquals(new int[]{0, 0, 1, 1}, f.arrY);
-        assertArrayEquals(new int[]{0,0,0,0,0,0,1}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,0,0,0,0,0,1}, ffMock.getCounts());
     }
 
     @Test
@@ -386,11 +388,11 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(6);
         when(r.nextInt(4)).thenReturn(3);
 
-        Figure f = figureFactory.getRandomFigure();
+        Figure f = ffMock.getRandomFigure();
         assertEquals(Figure.Z, f.getGridVal());
         assertArrayEquals(new int[]{0, 1, 1, 2}, f.arrY);
         assertArrayEquals(new int[]{1, 0, 1, 0}, f.arrX);
-        assertArrayEquals(new int[]{0,0,0,0,0,0,1}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,0,0,0,0,0,1}, ffMock.getCounts());
     }
 
     /* Checks that repeating a figure once consecutively is allowed initially */
@@ -399,12 +401,12 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(0,0,1);
         when(r.nextInt(4)).thenReturn(0,1);
 
-        Figure f1 = figureFactory.getRandomFigure();
-        Figure f2 = figureFactory.getRandomFigure();
+        Figure f1 = ffMock.getRandomFigure();
+        Figure f2 = ffMock.getRandomFigure();
 
         assertEquals(Figure.I, f1.getGridVal());
         assertEquals(Figure.I, f2.getGridVal());
-        assertArrayEquals(new int[]{2,0,0,0,0,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{2,0,0,0,0,0,0}, ffMock.getCounts());
     }
 
     /* Checks that repeating a figure once consecutively is allowed in a later position */
@@ -413,14 +415,14 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(0,1,1,0);
         when(r.nextInt(4)).thenReturn(0,1,2);
 
-        Figure f1 = figureFactory.getRandomFigure();
-        Figure f2 = figureFactory.getRandomFigure();
-        Figure f3 = figureFactory.getRandomFigure();
+        Figure f1 = ffMock.getRandomFigure();
+        Figure f2 = ffMock.getRandomFigure();
+        Figure f3 = ffMock.getRandomFigure();
 
         assertEquals(Figure.I, f1.getGridVal());
         assertEquals(Figure.T, f2.getGridVal());
         assertEquals(Figure.T, f3.getGridVal());
-        assertArrayEquals(new int[]{1,2,0,0,0,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{1,2,0,0,0,0,0}, ffMock.getCounts());
     }
 
     /* Checks that repeating a figure twice consecutively is not allowed initially */
@@ -429,14 +431,14 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(0,0,0,1);
         when(r.nextInt(4)).thenReturn(0,1,2);
 
-        Figure f1 = figureFactory.getRandomFigure();
-        Figure f2 = figureFactory.getRandomFigure();
-        Figure f3 = figureFactory.getRandomFigure();
+        Figure f1 = ffMock.getRandomFigure();
+        Figure f2 = ffMock.getRandomFigure();
+        Figure f3 = ffMock.getRandomFigure();
 
         assertEquals(Figure.I, f1.getGridVal());
         assertEquals(Figure.I, f2.getGridVal());
         assertEquals(Figure.T, f3.getGridVal());
-        assertArrayEquals(new int[]{2,1,0,0,0,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{2,1,0,0,0,0,0}, ffMock.getCounts());
     }
 
     /* Checks that repeating a figure twice consecutively is not allowed even in middle positions */
@@ -445,14 +447,14 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(0,0,0,0,0,0,0,1);
         when(r.nextInt(4)).thenReturn(0,1,2);
 
-        Figure f1 = figureFactory.getRandomFigure();
-        Figure f2 = figureFactory.getRandomFigure();
-        Figure f3 = figureFactory.getRandomFigure();
+        Figure f1 = ffMock.getRandomFigure();
+        Figure f2 = ffMock.getRandomFigure();
+        Figure f3 = ffMock.getRandomFigure();
 
         assertEquals(Figure.I, f1.getGridVal());
         assertEquals(Figure.I, f2.getGridVal());
         assertEquals(Figure.T, f3.getGridVal());
-        assertArrayEquals(new int[]{2,1,0,0,0,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{2,1,0,0,0,0,0}, ffMock.getCounts());
     }
 
     /* Checks that repeating 2 figures consecutively is not allowed */
@@ -461,18 +463,18 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(0,0,0,0,0,1,1,1,1,2);
         when(r.nextInt(4)).thenReturn(0,1,2,3,1);
 
-        Figure f1 = figureFactory.getRandomFigure();
-        Figure f2 = figureFactory.getRandomFigure();
-        Figure f3 = figureFactory.getRandomFigure();
-        Figure f4 = figureFactory.getRandomFigure();
-        Figure f5 = figureFactory.getRandomFigure();
+        Figure f1 = ffMock.getRandomFigure();
+        Figure f2 = ffMock.getRandomFigure();
+        Figure f3 = ffMock.getRandomFigure();
+        Figure f4 = ffMock.getRandomFigure();
+        Figure f5 = ffMock.getRandomFigure();
 
         assertEquals(Figure.I, f1.getGridVal());
         assertEquals(Figure.I, f2.getGridVal());
         assertEquals(Figure.T, f3.getGridVal());
         assertEquals(Figure.T, f4.getGridVal());
         assertEquals(Figure.O, f5.getGridVal());
-        assertArrayEquals(new int[]{2,2,1,0,0,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{2,2,1,0,0,0,0}, ffMock.getCounts());
     }
 
     /* Checks that repeating 2 figures broken up is allowed */
@@ -481,13 +483,13 @@ public class FigureFactoryTest {
         when(r.nextInt(7)).thenReturn(4,4,4,3,3,4,4,4,3);
         when(r.nextInt(4)).thenReturn(0,1,2,3,1);
 
-        Figure f1 = figureFactory.getRandomFigure();
-        Figure f2 = figureFactory.getRandomFigure();
-        Figure f3 = figureFactory.getRandomFigure();
-        Figure f4 = figureFactory.getRandomFigure();
-        Figure f5 = figureFactory.getRandomFigure();
-        Figure f6 = figureFactory.getRandomFigure();
-        Figure f7 = figureFactory.getRandomFigure();
+        Figure f1 = ffMock.getRandomFigure();
+        Figure f2 = ffMock.getRandomFigure();
+        Figure f3 = ffMock.getRandomFigure();
+        Figure f4 = ffMock.getRandomFigure();
+        Figure f5 = ffMock.getRandomFigure();
+        Figure f6 = ffMock.getRandomFigure();
+        Figure f7 = ffMock.getRandomFigure();
 
         assertEquals(Figure.J, f1.getGridVal());
         assertEquals(Figure.J, f2.getGridVal());
@@ -497,6 +499,6 @@ public class FigureFactoryTest {
         assertEquals(Figure.J, f6.getGridVal());
         assertEquals(Figure.L, f7.getGridVal());
 
-        assertArrayEquals(new int[]{0,0,0,3,4,0,0}, figureFactory.getCounts());
+        assertArrayEquals(new int[]{0,0,0,3,4,0,0}, ffMock.getCounts());
     }
 }

@@ -1,0 +1,1189 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > JetrisMainFrame</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+    @import "../../.css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../.js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.devng.jetris</a>
+</div>
+
+<h1>Coverage Summary for Class: JetrisMainFrame (com.devng.jetris)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">JetrisMainFrame</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/29)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/480)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">JetrisMainFrame$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/12)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">JetrisMainFrame$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">JetrisMainFrame$3</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">JetrisMainFrame$4</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">JetrisMainFrame$GridThread</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/17)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">JetrisMainFrame$MenuHandler</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/17)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">JetrisMainFrame$TimeThread</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/37)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/47)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/569)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package com.devng.jetris;
+<i class="no-highlight">2</i>&nbsp;/* MainFrame created on 14.09.2006 */
+<i class="no-highlight">3</i>&nbsp;
+<i class="no-highlight">4</i>&nbsp;import javax.imageio.ImageIO;
+<i class="no-highlight">5</i>&nbsp;import javax.swing.*;
+<i class="no-highlight">6</i>&nbsp;import javax.swing.border.BevelBorder;
+<i class="no-highlight">7</i>&nbsp;import javax.swing.border.EtchedBorder;
+<i class="no-highlight">8</i>&nbsp;import java.awt.*;
+<i class="no-highlight">9</i>&nbsp;import java.awt.event.*;
+<i class="no-highlight">10</i>&nbsp;import java.io.BufferedInputStream;
+<i class="no-highlight">11</i>&nbsp;
+<b class="nc"><i class="no-highlight">12</i>&nbsp;public class JetrisMainFrame extends JFrame {</b>
+<i class="no-highlight">13</i>&nbsp;
+<i class="no-highlight">14</i>&nbsp;    private static final int CELL_H = 24;
+<i class="no-highlight">15</i>&nbsp;
+<i class="no-highlight">16</i>&nbsp;    private Font font;
+<i class="no-highlight">17</i>&nbsp;    private JPanel playPanel;
+<i class="no-highlight">18</i>&nbsp;    private JLabel score;
+<i class="no-highlight">19</i>&nbsp;    private JLabel lines;
+<i class="no-highlight">20</i>&nbsp;    private JLabel time;
+<i class="no-highlight">21</i>&nbsp;    private JLabel[] statsF;
+<i class="no-highlight">22</i>&nbsp;    private JLabel[] statsL;
+<i class="no-highlight">23</i>&nbsp;    private JLabel levelLabel;
+<i class="no-highlight">24</i>&nbsp;    private JLabel hiScoreLabel;
+<i class="no-highlight">25</i>&nbsp;    private JPanel[][] cells;
+<i class="no-highlight">26</i>&nbsp;    private TetrisGrid tg;
+<i class="no-highlight">27</i>&nbsp;    private JPanel[][] next;
+<i class="no-highlight">28</i>&nbsp;    private int nextX;
+<i class="no-highlight">29</i>&nbsp;    private int nextY;
+<i class="no-highlight">30</i>&nbsp;    private Figure f;
+<i class="no-highlight">31</i>&nbsp;    private Figure fNext;
+<i class="no-highlight">32</i>&nbsp;    private FigureFactory ff;
+<i class="no-highlight">33</i>&nbsp;    private boolean isNewFigureDroped;
+<i class="no-highlight">34</i>&nbsp;    private boolean isGameOver;
+<i class="no-highlight">35</i>&nbsp;    private boolean isPause;
+<i class="no-highlight">36</i>&nbsp;    private Color nextBg;
+<i class="no-highlight">37</i>&nbsp;    private TimeThread tt;
+<i class="no-highlight">38</i>&nbsp;    private KeyListener keyHandler;
+<i class="no-highlight">39</i>&nbsp;
+<i class="no-highlight">40</i>&nbsp;    private JPanel about;
+<i class="no-highlight">41</i>&nbsp;
+<i class="no-highlight">42</i>&nbsp;    //MENU
+<i class="no-highlight">43</i>&nbsp;    private JMenuItem jetrisRestart;
+<i class="no-highlight">44</i>&nbsp;    private JMenuItem jetrisPause;
+<i class="no-highlight">45</i>&nbsp;    private JMenuItem jetrisHiScore;
+<i class="no-highlight">46</i>&nbsp;    private JMenuItem jetrisExit;
+<i class="no-highlight">47</i>&nbsp;
+<i class="no-highlight">48</i>&nbsp;    private JMenuItem helpAbout;
+<i class="no-highlight">49</i>&nbsp;    private JMenuItem helpJetris;
+<i class="no-highlight">50</i>&nbsp;
+<i class="no-highlight">51</i>&nbsp;    private HelpDialog helpDialog;
+<i class="no-highlight">52</i>&nbsp;
+<i class="no-highlight">53</i>&nbsp;    private JPanel hiScorePanel;
+<i class="no-highlight">54</i>&nbsp;
+<b class="nc"><i class="no-highlight">55</i>&nbsp;    private class GridThread extends Thread {</b>
+<i class="no-highlight">56</i>&nbsp;
+<b class="nc"><i class="no-highlight">57</i>&nbsp;        private int count = 0;</b>
+<i class="no-highlight">58</i>&nbsp;
+<i class="no-highlight">59</i>&nbsp;        public void run() {
+<i class="no-highlight">60</i>&nbsp;            try {
+<i class="no-highlight">61</i>&nbsp;                while (true) {
+<b class="nc"><i class="no-highlight">62</i>&nbsp;                    if (isGameOver || isPause) {</b>
+<b class="nc"><i class="no-highlight">63</i>&nbsp;                        Thread.sleep(50);</b>
+<i class="no-highlight">64</i>&nbsp;                    } else {
+<b class="nc"><i class="no-highlight">65</i>&nbsp;                        if (isNewFigureDroped) {</b>
+<b class="nc"><i class="no-highlight">66</i>&nbsp;                            isNewFigureDroped = false;</b>
+<b class="nc"><i class="no-highlight">67</i>&nbsp;                            count = 0;</b>
+<b class="nc"><i class="no-highlight">68</i>&nbsp;                            nextMove();</b>
+<b class="nc"><i class="no-highlight">69</i>&nbsp;                            continue;</b>
+<i class="no-highlight">70</i>&nbsp;                        } else {
+<b class="nc"><i class="no-highlight">71</i>&nbsp;                            Thread.sleep(50);</b>
+<i class="no-highlight">72</i>&nbsp;                        }
+<b class="nc"><i class="no-highlight">73</i>&nbsp;                        count += 50;</b>
+<b class="nc"><i class="no-highlight">74</i>&nbsp;                        if (count + 50 * tg.getLevel() &gt;= 1100) {</b>
+<b class="nc"><i class="no-highlight">75</i>&nbsp;                            count = 0;</b>
+<b class="nc"><i class="no-highlight">76</i>&nbsp;                            nextY++;</b>
+<b class="nc"><i class="no-highlight">77</i>&nbsp;                            nextMove();</b>
+<i class="no-highlight">78</i>&nbsp;                        }
+<i class="no-highlight">79</i>&nbsp;                    }
+<i class="no-highlight">80</i>&nbsp;                }
+<b class="nc"><i class="no-highlight">81</i>&nbsp;            } catch (Exception e) {</b>
+<b class="nc"><i class="no-highlight">82</i>&nbsp;                e.printStackTrace();</b>
+<i class="no-highlight">83</i>&nbsp;            }
+<i class="no-highlight">84</i>&nbsp;        }
+<i class="no-highlight">85</i>&nbsp;    }
+<i class="no-highlight">86</i>&nbsp;
+<b class="nc"><i class="no-highlight">87</i>&nbsp;    private class TimeThread extends Thread {</b>
+<i class="no-highlight">88</i>&nbsp;
+<i class="no-highlight">89</i>&nbsp;        private int hours;
+<i class="no-highlight">90</i>&nbsp;        private int min;
+<i class="no-highlight">91</i>&nbsp;        private int sec;
+<i class="no-highlight">92</i>&nbsp;
+<i class="no-highlight">93</i>&nbsp;        private int count;
+<i class="no-highlight">94</i>&nbsp;
+<i class="no-highlight">95</i>&nbsp;        private void incSec() {
+<b class="nc"><i class="no-highlight">96</i>&nbsp;            sec++;</b>
+<b class="nc"><i class="no-highlight">97</i>&nbsp;            if (sec == 60) {</b>
+<b class="nc"><i class="no-highlight">98</i>&nbsp;                sec = 0;</b>
+<b class="nc"><i class="no-highlight">99</i>&nbsp;                min++;</b>
+<i class="no-highlight">100</i>&nbsp;            }
+<b class="nc"><i class="no-highlight">101</i>&nbsp;            if (min == 60) {</b>
+<b class="nc"><i class="no-highlight">102</i>&nbsp;                min = 0;</b>
+<b class="nc"><i class="no-highlight">103</i>&nbsp;                hours++;</b>
+<i class="no-highlight">104</i>&nbsp;            }
+<i class="no-highlight">105</i>&nbsp;        }
+<i class="no-highlight">106</i>&nbsp;
+<i class="no-highlight">107</i>&nbsp;        private void resetTime() {
+<b class="nc"><i class="no-highlight">108</i>&nbsp;            hours = min = sec = 0;</b>
+<i class="no-highlight">109</i>&nbsp;        }
+<i class="no-highlight">110</i>&nbsp;
+<i class="no-highlight">111</i>&nbsp;        public void run() {
+<i class="no-highlight">112</i>&nbsp;            try {
+<i class="no-highlight">113</i>&nbsp;                while (true) {
+<b class="nc"><i class="no-highlight">114</i>&nbsp;                    Thread.sleep(50);</b>
+<b class="nc"><i class="no-highlight">115</i>&nbsp;                    if (isGameOver) {</b>
+<b class="nc"><i class="no-highlight">116</i>&nbsp;                        Graphics g = playPanel.getGraphics();</b>
+<b class="nc"><i class="no-highlight">117</i>&nbsp;                        Font font = new Font(g.getFont().getFontName(), Font.BOLD, 24);</b>
+<b class="nc"><i class="no-highlight">118</i>&nbsp;                        g.setFont(font);</b>
+<b class="nc"><i class="no-highlight">119</i>&nbsp;                        g.drawString(&quot;GAME OVER&quot;, 47, 250);</b>
+<b class="nc"><i class="no-highlight">120</i>&nbsp;                    } else if (isPause) {</b>
+<b class="nc"><i class="no-highlight">121</i>&nbsp;                        time.setText(&quot;PAUSED&quot;);</b>
+<b class="nc"><i class="no-highlight">122</i>&nbsp;                    } else if (count &gt;= 1000) {</b>
+<b class="nc"><i class="no-highlight">123</i>&nbsp;                        count = 0;</b>
+<b class="nc"><i class="no-highlight">124</i>&nbsp;                        incSec();</b>
+<b class="nc"><i class="no-highlight">125</i>&nbsp;                        time.setText(this.toString());</b>
+<i class="no-highlight">126</i>&nbsp;                    } else {
+<b class="nc"><i class="no-highlight">127</i>&nbsp;                        count += 50;</b>
+<i class="no-highlight">128</i>&nbsp;                    }
+<i class="no-highlight">129</i>&nbsp;                }
+<b class="nc"><i class="no-highlight">130</i>&nbsp;            } catch (Exception e) {</b>
+<b class="nc"><i class="no-highlight">131</i>&nbsp;                e.printStackTrace();</b>
+<i class="no-highlight">132</i>&nbsp;            }
+<i class="no-highlight">133</i>&nbsp;        }
+<i class="no-highlight">134</i>&nbsp;
+<i class="no-highlight">135</i>&nbsp;        public String toString() {
+<b class="nc"><i class="no-highlight">136</i>&nbsp;            StringBuffer sb = new StringBuffer();</b>
+<b class="nc"><i class="no-highlight">137</i>&nbsp;            if (hours &lt; 10) {</b>
+<b class="nc"><i class="no-highlight">138</i>&nbsp;                sb.append(&#39;0&#39;);</b>
+<i class="no-highlight">139</i>&nbsp;            }
+<b class="nc"><i class="no-highlight">140</i>&nbsp;            sb.append(hours);</b>
+<i class="no-highlight">141</i>&nbsp;
+<b class="nc"><i class="no-highlight">142</i>&nbsp;            sb.append(&#39;:&#39;);</b>
+<i class="no-highlight">143</i>&nbsp;
+<b class="nc"><i class="no-highlight">144</i>&nbsp;            if (min &lt; 10) {</b>
+<b class="nc"><i class="no-highlight">145</i>&nbsp;                sb.append(&#39;0&#39;);</b>
+<i class="no-highlight">146</i>&nbsp;            }
+<b class="nc"><i class="no-highlight">147</i>&nbsp;            sb.append(min);</b>
+<i class="no-highlight">148</i>&nbsp;
+<b class="nc"><i class="no-highlight">149</i>&nbsp;            sb.append(&#39;:&#39;);</b>
+<i class="no-highlight">150</i>&nbsp;
+<b class="nc"><i class="no-highlight">151</i>&nbsp;            if (sec &lt; 10) {</b>
+<b class="nc"><i class="no-highlight">152</i>&nbsp;                sb.append(&#39;0&#39;);</b>
+<i class="no-highlight">153</i>&nbsp;            }
+<b class="nc"><i class="no-highlight">154</i>&nbsp;            sb.append(sec);</b>
+<i class="no-highlight">155</i>&nbsp;
+<b class="nc"><i class="no-highlight">156</i>&nbsp;            return sb.toString();</b>
+<i class="no-highlight">157</i>&nbsp;        }
+<i class="no-highlight">158</i>&nbsp;    }
+<i class="no-highlight">159</i>&nbsp;
+<i class="no-highlight">160</i>&nbsp;    public JetrisMainFrame() {
+<b class="nc"><i class="no-highlight">161</i>&nbsp;        super(GV.NAME + &quot; &quot; + GV.VERSION);</b>
+<i class="no-highlight">162</i>&nbsp;
+<b class="nc"><i class="no-highlight">163</i>&nbsp;        com.devng.jetris.SplashScreen sp = new SplashScreen();</b>
+<i class="no-highlight">164</i>&nbsp;
+<b class="nc"><i class="no-highlight">165</i>&nbsp;        setIconImage(loadImage(GV.IMG_FOLDER + &quot;jetris16x16.png&quot;));</b>
+<i class="no-highlight">166</i>&nbsp;
+<b class="nc"><i class="no-highlight">167</i>&nbsp;        keyHandler = new KeyAdapter() {</b>
+<i class="no-highlight">168</i>&nbsp;
+<i class="no-highlight">169</i>&nbsp;            public void keyPressed(KeyEvent e) {
+<b class="nc"><i class="no-highlight">170</i>&nbsp;                int code = e.getKeyCode();</b>
+<b class="nc"><i class="no-highlight">171</i>&nbsp;                if (code == KeyEvent.VK_A || code == KeyEvent.VK_LEFT) {</b>
+<b class="nc"><i class="no-highlight">172</i>&nbsp;                    moveLeft();</b>
+<b class="nc"><i class="no-highlight">173</i>&nbsp;                } else if (code == KeyEvent.VK_D || code == KeyEvent.VK_RIGHT) {</b>
+<b class="nc"><i class="no-highlight">174</i>&nbsp;                    moveRight();</b>
+<b class="nc"><i class="no-highlight">175</i>&nbsp;                } else if (code == KeyEvent.VK_S || code == KeyEvent.VK_DOWN) {</b>
+<b class="nc"><i class="no-highlight">176</i>&nbsp;                    moveDown();</b>
+<b class="nc"><i class="no-highlight">177</i>&nbsp;                } else if (code == KeyEvent.VK_W || code == KeyEvent.VK_UP) {</b>
+<b class="nc"><i class="no-highlight">178</i>&nbsp;                    rotation();</b>
+<b class="nc"><i class="no-highlight">179</i>&nbsp;                } else if (code == KeyEvent.VK_SPACE) {</b>
+<b class="nc"><i class="no-highlight">180</i>&nbsp;                    moveDrop();</b>
+<i class="no-highlight">181</i>&nbsp;                } /*else if(code == KeyEvent.VK_R) { //Only for the applet needed
+<i class="no-highlight">182</i>&nbsp;                    restart();
+<i class="no-highlight">183</i>&nbsp;                } else if(code == KeyEvent.VK_P) {
+<i class="no-highlight">184</i>&nbsp;                    pause();
+<i class="no-highlight">185</i>&nbsp;                } */
+<i class="no-highlight">186</i>&nbsp;            }
+<i class="no-highlight">187</i>&nbsp;        };
+<b class="nc"><i class="no-highlight">188</i>&nbsp;        addKeyListener(keyHandler);</b>
+<i class="no-highlight">189</i>&nbsp;
+<b class="nc"><i class="no-highlight">190</i>&nbsp;        font = new Font(&quot;Dialog&quot;, Font.PLAIN, 12);</b>
+<b class="nc"><i class="no-highlight">191</i>&nbsp;        tg = new TetrisGrid();</b>
+<b class="nc"><i class="no-highlight">192</i>&nbsp;        ff = new FigureFactory();</b>
+<b class="nc"><i class="no-highlight">193</i>&nbsp;        nextBg = new Color(238, 238, 238);</b>
+<i class="no-highlight">194</i>&nbsp;
+<b class="nc"><i class="no-highlight">195</i>&nbsp;        initMenu();</b>
+<i class="no-highlight">196</i>&nbsp;
+<b class="nc"><i class="no-highlight">197</i>&nbsp;        JPanel all = new JPanel(new BorderLayout());</b>
+<b class="nc"><i class="no-highlight">198</i>&nbsp;        all.add(getStatPanel(), BorderLayout.WEST);</b>
+<b class="nc"><i class="no-highlight">199</i>&nbsp;        all.add(getPlayPanel(), BorderLayout.CENTER);</b>
+<b class="nc"><i class="no-highlight">200</i>&nbsp;        all.add(getMenuPanel(), BorderLayout.EAST);</b>
+<b class="nc"><i class="no-highlight">201</i>&nbsp;        all.add(getCopyrightPanel(), BorderLayout.SOUTH);</b>
+<i class="no-highlight">202</i>&nbsp;
+<b class="nc"><i class="no-highlight">203</i>&nbsp;        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</b>
+<b class="nc"><i class="no-highlight">204</i>&nbsp;        this.getContentPane().add(all, BorderLayout.CENTER);</b>
+<b class="nc"><i class="no-highlight">205</i>&nbsp;        pack();</b>
+<b class="nc"><i class="no-highlight">206</i>&nbsp;        this.setResizable(false);</b>
+<i class="no-highlight">207</i>&nbsp;
+<i class="no-highlight">208</i>&nbsp;
+<b class="nc"><i class="no-highlight">209</i>&nbsp;        fNext = ff.getRandomFigure();</b>
+<b class="nc"><i class="no-highlight">210</i>&nbsp;        dropNext();</b>
+<i class="no-highlight">211</i>&nbsp;
+<b class="nc"><i class="no-highlight">212</i>&nbsp;        GridThread gt = new GridThread();</b>
+<b class="nc"><i class="no-highlight">213</i>&nbsp;        tt = new TimeThread();</b>
+<b class="nc"><i class="no-highlight">214</i>&nbsp;        gt.start();</b>
+<b class="nc"><i class="no-highlight">215</i>&nbsp;        tt.start();</b>
+<i class="no-highlight">216</i>&nbsp;
+<b class="nc"><i class="no-highlight">217</i>&nbsp;        addWindowFocusListener(new WindowFocusListener() {</b>
+<i class="no-highlight">218</i>&nbsp;
+<i class="no-highlight">219</i>&nbsp;            public void windowGainedFocus(WindowEvent arg0) {
+<i class="no-highlight">220</i>&nbsp;            }
+<i class="no-highlight">221</i>&nbsp;
+<i class="no-highlight">222</i>&nbsp;            public void windowLostFocus(WindowEvent arg0) {
+<b class="nc"><i class="no-highlight">223</i>&nbsp;                isPause = true;</b>
+<i class="no-highlight">224</i>&nbsp;            }
+<i class="no-highlight">225</i>&nbsp;        });
+<i class="no-highlight">226</i>&nbsp;
+<i class="no-highlight">227</i>&nbsp;
+<b class="nc"><i class="no-highlight">228</i>&nbsp;        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();</b>
+<b class="nc"><i class="no-highlight">229</i>&nbsp;        setLocation(screenSize.width / 2 - getWidth() / 2, screenSize.height / 2 - getHeight() / 2);</b>
+<b class="nc"><i class="no-highlight">230</i>&nbsp;        setVisible(true);</b>
+<b class="nc"><i class="no-highlight">231</i>&nbsp;        sp.setVisible(false);</b>
+<b class="nc"><i class="no-highlight">232</i>&nbsp;        sp.dispose();</b>
+<i class="no-highlight">233</i>&nbsp;    }
+<i class="no-highlight">234</i>&nbsp;
+<i class="no-highlight">235</i>&nbsp;    private void initMenu() {
+<i class="no-highlight">236</i>&nbsp;
+<b class="nc"><i class="no-highlight">237</i>&nbsp;        MenuHandler mH = new MenuHandler();</b>
+<i class="no-highlight">238</i>&nbsp;
+<b class="nc"><i class="no-highlight">239</i>&nbsp;        JMenuBar menu = new JMenuBar();</b>
+<b class="nc"><i class="no-highlight">240</i>&nbsp;        setJMenuBar(menu);</b>
+<i class="no-highlight">241</i>&nbsp;
+<b class="nc"><i class="no-highlight">242</i>&nbsp;        JMenu mJetris = new JMenu();</b>
+<b class="nc"><i class="no-highlight">243</i>&nbsp;        menu.add(mJetris);</b>
+<b class="nc"><i class="no-highlight">244</i>&nbsp;        mJetris.setText(&quot;Game&quot;);</b>
+<b class="nc"><i class="no-highlight">245</i>&nbsp;        mJetris.setMnemonic(&#39;G&#39;);</b>
+<i class="no-highlight">246</i>&nbsp;        {
+<b class="nc"><i class="no-highlight">247</i>&nbsp;            jetrisRestart = new JMenuItem(&quot;Restart&quot;);</b>
+<b class="nc"><i class="no-highlight">248</i>&nbsp;            mJetris.add(jetrisRestart);</b>
+<b class="nc"><i class="no-highlight">249</i>&nbsp;            setKeyAcceleratorMenu(jetrisRestart, &#39;R&#39;);</b>
+<b class="nc"><i class="no-highlight">250</i>&nbsp;            jetrisRestart.addActionListener(mH);</b>
+<b class="nc"><i class="no-highlight">251</i>&nbsp;            jetrisRestart.setMnemonic(&#39;R&#39;);</b>
+<i class="no-highlight">252</i>&nbsp;
+<b class="nc"><i class="no-highlight">253</i>&nbsp;            jetrisPause = new JMenuItem(&quot;Pause&quot;);</b>
+<b class="nc"><i class="no-highlight">254</i>&nbsp;            mJetris.add(jetrisPause);</b>
+<b class="nc"><i class="no-highlight">255</i>&nbsp;            setKeyAcceleratorMenu(jetrisPause, &#39;P&#39;);</b>
+<b class="nc"><i class="no-highlight">256</i>&nbsp;            jetrisPause.addActionListener(mH);</b>
+<b class="nc"><i class="no-highlight">257</i>&nbsp;            jetrisPause.setMnemonic(&#39;P&#39;);</b>
+<i class="no-highlight">258</i>&nbsp;
+<b class="nc"><i class="no-highlight">259</i>&nbsp;            mJetris.addSeparator();</b>
+<i class="no-highlight">260</i>&nbsp;
+<b class="nc"><i class="no-highlight">261</i>&nbsp;            jetrisHiScore = new JMenuItem(&quot;HiScore...&quot;);</b>
+<b class="nc"><i class="no-highlight">262</i>&nbsp;            mJetris.add(jetrisHiScore);</b>
+<b class="nc"><i class="no-highlight">263</i>&nbsp;            setKeyAcceleratorMenu(jetrisHiScore, &#39;H&#39;);</b>
+<b class="nc"><i class="no-highlight">264</i>&nbsp;            jetrisHiScore.addActionListener(mH);</b>
+<b class="nc"><i class="no-highlight">265</i>&nbsp;            jetrisHiScore.setMnemonic(&#39;H&#39;);</b>
+<i class="no-highlight">266</i>&nbsp;
+<b class="nc"><i class="no-highlight">267</i>&nbsp;            mJetris.addSeparator();</b>
+<i class="no-highlight">268</i>&nbsp;
+<b class="nc"><i class="no-highlight">269</i>&nbsp;            jetrisExit = new JMenuItem(&quot;Exit&quot;);</b>
+<b class="nc"><i class="no-highlight">270</i>&nbsp;            mJetris.add(jetrisExit);</b>
+<b class="nc"><i class="no-highlight">271</i>&nbsp;            setKeyAcceleratorMenu(jetrisExit, KeyEvent.VK_ESCAPE);</b>
+<b class="nc"><i class="no-highlight">272</i>&nbsp;            jetrisExit.addActionListener(mH);</b>
+<b class="nc"><i class="no-highlight">273</i>&nbsp;            jetrisExit.setMnemonic(&#39;X&#39;);</b>
+<i class="no-highlight">274</i>&nbsp;        }
+<i class="no-highlight">275</i>&nbsp;
+<b class="nc"><i class="no-highlight">276</i>&nbsp;        JMenu mHelp = new JMenu();</b>
+<b class="nc"><i class="no-highlight">277</i>&nbsp;        menu.add(mHelp);</b>
+<b class="nc"><i class="no-highlight">278</i>&nbsp;        mHelp.setText(&quot;Help&quot;);</b>
+<b class="nc"><i class="no-highlight">279</i>&nbsp;        mHelp.setMnemonic(&#39;H&#39;);</b>
+<i class="no-highlight">280</i>&nbsp;        {
+<b class="nc"><i class="no-highlight">281</i>&nbsp;            helpJetris = new JMenuItem(&quot;JETRIS Help&quot;);</b>
+<b class="nc"><i class="no-highlight">282</i>&nbsp;            mHelp.add(helpJetris);</b>
+<b class="nc"><i class="no-highlight">283</i>&nbsp;            setKeyAcceleratorMenu(helpJetris, KeyEvent.VK_F1);</b>
+<b class="nc"><i class="no-highlight">284</i>&nbsp;            helpJetris.addActionListener(mH);</b>
+<b class="nc"><i class="no-highlight">285</i>&nbsp;            helpJetris.setMnemonic(&#39;J&#39;);</b>
+<i class="no-highlight">286</i>&nbsp;
+<b class="nc"><i class="no-highlight">287</i>&nbsp;            helpAbout = new JMenuItem(&quot;About&quot;);</b>
+<b class="nc"><i class="no-highlight">288</i>&nbsp;            mHelp.add(helpAbout);</b>
+<b class="nc"><i class="no-highlight">289</i>&nbsp;            helpAbout.addActionListener(mH);</b>
+<b class="nc"><i class="no-highlight">290</i>&nbsp;            helpAbout.setMnemonic(&#39;A&#39;);</b>
+<i class="no-highlight">291</i>&nbsp;        }
+<i class="no-highlight">292</i>&nbsp;    }
+<i class="no-highlight">293</i>&nbsp;
+<i class="no-highlight">294</i>&nbsp;    private void setKeyAcceleratorMenu(JMenuItem mi, int keyCode) {
+<b class="nc"><i class="no-highlight">295</i>&nbsp;        KeyStroke ks = KeyStroke.getKeyStroke(keyCode, 0);</b>
+<b class="nc"><i class="no-highlight">296</i>&nbsp;        mi.setAccelerator(ks);</b>
+<i class="no-highlight">297</i>&nbsp;    }
+<i class="no-highlight">298</i>&nbsp;
+<i class="no-highlight">299</i>&nbsp;    private JPanel getPlayPanel() {
+<b class="nc"><i class="no-highlight">300</i>&nbsp;        playPanel = new JPanel();</b>
+<b class="nc"><i class="no-highlight">301</i>&nbsp;        playPanel.setLayout(new GridLayout(20, 10));</b>
+<b class="nc"><i class="no-highlight">302</i>&nbsp;        playPanel.setPreferredSize(new Dimension(10 * CELL_H, 20 * CELL_H));</b>
+<i class="no-highlight">303</i>&nbsp;
+<b class="nc"><i class="no-highlight">304</i>&nbsp;        cells = new JPanel[20][10];</b>
+<b class="nc"><i class="no-highlight">305</i>&nbsp;        for (int i = 0; i &lt; 20; i++) {</b>
+<b class="nc"><i class="no-highlight">306</i>&nbsp;            for (int j = 0; j &lt; 10; j++) {</b>
+<b class="nc"><i class="no-highlight">307</i>&nbsp;                cells[i][j] = new JPanel();</b>
+<b class="nc"><i class="no-highlight">308</i>&nbsp;                cells[i][j].setBackground(Color.WHITE);</b>
+<b class="nc"><i class="no-highlight">309</i>&nbsp;                cells[i][j].setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));</b>
+<b class="nc"><i class="no-highlight">310</i>&nbsp;                playPanel.add(cells[i][j]);</b>
+<i class="no-highlight">311</i>&nbsp;            }
+<i class="no-highlight">312</i>&nbsp;        }
+<b class="nc"><i class="no-highlight">313</i>&nbsp;        return playPanel;</b>
+<i class="no-highlight">314</i>&nbsp;    }
+<i class="no-highlight">315</i>&nbsp;
+<i class="no-highlight">316</i>&nbsp;    private JPanel getMenuPanel() {
+<b class="nc"><i class="no-highlight">317</i>&nbsp;        JPanel r = new JPanel();</b>
+<b class="nc"><i class="no-highlight">318</i>&nbsp;        BoxLayout rL = new BoxLayout(r, BoxLayout.Y_AXIS);</b>
+<b class="nc"><i class="no-highlight">319</i>&nbsp;        r.setLayout(rL);</b>
+<b class="nc"><i class="no-highlight">320</i>&nbsp;        r.setBorder(new EtchedBorder());</b>
+<b class="nc"><i class="no-highlight">321</i>&nbsp;        Dimension ra = new Dimension(5, 0);</b>
+<b class="nc"><i class="no-highlight">322</i>&nbsp;        next = new JPanel[4][4];</b>
+<b class="nc"><i class="no-highlight">323</i>&nbsp;        JPanel nextP = new JPanel();</b>
+<b class="nc"><i class="no-highlight">324</i>&nbsp;        nextP.setLayout(new GridLayout(4, 4));</b>
+<b class="nc"><i class="no-highlight">325</i>&nbsp;        Dimension d = new Dimension(4 * 18, 4 * 18);</b>
+<b class="nc"><i class="no-highlight">326</i>&nbsp;        nextP.setMinimumSize(d);</b>
+<b class="nc"><i class="no-highlight">327</i>&nbsp;        nextP.setPreferredSize(d);</b>
+<b class="nc"><i class="no-highlight">328</i>&nbsp;        nextP.setMaximumSize(d);</b>
+<b class="nc"><i class="no-highlight">329</i>&nbsp;        for (int i = 0; i &lt; 4; i++) {</b>
+<b class="nc"><i class="no-highlight">330</i>&nbsp;            for (int j = 0; j &lt; 4; j++) {</b>
+<b class="nc"><i class="no-highlight">331</i>&nbsp;                next[i][j] = new JPanel();</b>
+<b class="nc"><i class="no-highlight">332</i>&nbsp;                nextP.add(next[i][j]);</b>
+<i class="no-highlight">333</i>&nbsp;            }
+<i class="no-highlight">334</i>&nbsp;        }
+<i class="no-highlight">335</i>&nbsp;
+<b class="nc"><i class="no-highlight">336</i>&nbsp;        JPanel jp = new JPanel();</b>
+<b class="nc"><i class="no-highlight">337</i>&nbsp;        jp.setLayout(new BoxLayout(jp, BoxLayout.LINE_AXIS));</b>
+<b class="nc"><i class="no-highlight">338</i>&nbsp;        jp.add(Box.createRigidArea(ra));</b>
+<b class="nc"><i class="no-highlight">339</i>&nbsp;        jp.add(new JLabel(&quot;NEXT:&quot;));</b>
+<b class="nc"><i class="no-highlight">340</i>&nbsp;        jp.add(Box.createHorizontalGlue());</b>
+<b class="nc"><i class="no-highlight">341</i>&nbsp;        r.add(jp);</b>
+<b class="nc"><i class="no-highlight">342</i>&nbsp;        r.add(nextP);</b>
+<i class="no-highlight">343</i>&nbsp;
+<b class="nc"><i class="no-highlight">344</i>&nbsp;        r.add(Box.createRigidArea(new Dimension(100, 10)));</b>
+<i class="no-highlight">345</i>&nbsp;
+<b class="nc"><i class="no-highlight">346</i>&nbsp;        jp = new JPanel();</b>
+<b class="nc"><i class="no-highlight">347</i>&nbsp;        jp.setLayout(new BoxLayout(jp, BoxLayout.LINE_AXIS));</b>
+<b class="nc"><i class="no-highlight">348</i>&nbsp;        jp.add(Box.createRigidArea(ra));</b>
+<b class="nc"><i class="no-highlight">349</i>&nbsp;        jp.add(new JLabel(&quot;HI-SCORE:&quot;));</b>
+<b class="nc"><i class="no-highlight">350</i>&nbsp;        jp.add(Box.createHorizontalGlue());</b>
+<b class="nc"><i class="no-highlight">351</i>&nbsp;        r.add(jp);</b>
+<i class="no-highlight">352</i>&nbsp;
+<b class="nc"><i class="no-highlight">353</i>&nbsp;        hiScoreLabel = new JLabel(&quot;&quot; + tg.hiScore[0].score);</b>
+<b class="nc"><i class="no-highlight">354</i>&nbsp;        hiScoreLabel.setForeground(Color.RED);</b>
+<i class="no-highlight">355</i>&nbsp;
+<i class="no-highlight">356</i>&nbsp;
+<b class="nc"><i class="no-highlight">357</i>&nbsp;        jp = new JPanel();</b>
+<b class="nc"><i class="no-highlight">358</i>&nbsp;        jp.setLayout(new BoxLayout(jp, BoxLayout.LINE_AXIS));</b>
+<b class="nc"><i class="no-highlight">359</i>&nbsp;        jp.add(Box.createRigidArea(ra));</b>
+<b class="nc"><i class="no-highlight">360</i>&nbsp;        jp.add(hiScoreLabel);</b>
+<b class="nc"><i class="no-highlight">361</i>&nbsp;        jp.add(Box.createHorizontalGlue());</b>
+<b class="nc"><i class="no-highlight">362</i>&nbsp;        r.add(jp);</b>
+<i class="no-highlight">363</i>&nbsp;
+<b class="nc"><i class="no-highlight">364</i>&nbsp;        r.add(Box.createVerticalStrut(5));</b>
+<i class="no-highlight">365</i>&nbsp;
+<b class="nc"><i class="no-highlight">366</i>&nbsp;        jp = new JPanel();</b>
+<b class="nc"><i class="no-highlight">367</i>&nbsp;        jp.setLayout(new BoxLayout(jp, BoxLayout.LINE_AXIS));</b>
+<b class="nc"><i class="no-highlight">368</i>&nbsp;        jp.add(Box.createRigidArea(ra));</b>
+<b class="nc"><i class="no-highlight">369</i>&nbsp;        jp.add(new JLabel(&quot;SCORE:&quot;));</b>
+<b class="nc"><i class="no-highlight">370</i>&nbsp;        jp.add(Box.createHorizontalGlue());</b>
+<b class="nc"><i class="no-highlight">371</i>&nbsp;        r.add(jp);</b>
+<i class="no-highlight">372</i>&nbsp;
+<b class="nc"><i class="no-highlight">373</i>&nbsp;        score = new JLabel(&quot;0&quot;);</b>
+<b class="nc"><i class="no-highlight">374</i>&nbsp;        score.setForeground(Color.BLUE);</b>
+<i class="no-highlight">375</i>&nbsp;
+<b class="nc"><i class="no-highlight">376</i>&nbsp;        jp = new JPanel();</b>
+<b class="nc"><i class="no-highlight">377</i>&nbsp;        jp.setLayout(new BoxLayout(jp, BoxLayout.LINE_AXIS));</b>
+<b class="nc"><i class="no-highlight">378</i>&nbsp;        jp.add(Box.createRigidArea(ra));</b>
+<b class="nc"><i class="no-highlight">379</i>&nbsp;        jp.add(score);</b>
+<b class="nc"><i class="no-highlight">380</i>&nbsp;        jp.add(Box.createHorizontalGlue());</b>
+<b class="nc"><i class="no-highlight">381</i>&nbsp;        r.add(jp);</b>
+<i class="no-highlight">382</i>&nbsp;
+<b class="nc"><i class="no-highlight">383</i>&nbsp;        jp = new JPanel();</b>
+<b class="nc"><i class="no-highlight">384</i>&nbsp;        jp.setLayout(new BoxLayout(jp, BoxLayout.LINE_AXIS));</b>
+<b class="nc"><i class="no-highlight">385</i>&nbsp;        jp.add(Box.createRigidArea(ra));</b>
+<b class="nc"><i class="no-highlight">386</i>&nbsp;        jp.add(new JLabel(&quot;LINES:&quot;));</b>
+<b class="nc"><i class="no-highlight">387</i>&nbsp;        jp.add(Box.createHorizontalGlue());</b>
+<b class="nc"><i class="no-highlight">388</i>&nbsp;        r.add(jp);</b>
+<i class="no-highlight">389</i>&nbsp;
+<b class="nc"><i class="no-highlight">390</i>&nbsp;        lines = new JLabel(&quot;0&quot;);</b>
+<b class="nc"><i class="no-highlight">391</i>&nbsp;        lines.setForeground(Color.BLUE);</b>
+<i class="no-highlight">392</i>&nbsp;
+<b class="nc"><i class="no-highlight">393</i>&nbsp;        jp = new JPanel();</b>
+<b class="nc"><i class="no-highlight">394</i>&nbsp;        jp.setLayout(new BoxLayout(jp, BoxLayout.LINE_AXIS));</b>
+<b class="nc"><i class="no-highlight">395</i>&nbsp;        jp.add(Box.createRigidArea(ra));</b>
+<b class="nc"><i class="no-highlight">396</i>&nbsp;        jp.add(lines);</b>
+<b class="nc"><i class="no-highlight">397</i>&nbsp;        jp.add(Box.createHorizontalGlue());</b>
+<b class="nc"><i class="no-highlight">398</i>&nbsp;        r.add(jp);</b>
+<i class="no-highlight">399</i>&nbsp;
+<b class="nc"><i class="no-highlight">400</i>&nbsp;        jp = new JPanel();</b>
+<b class="nc"><i class="no-highlight">401</i>&nbsp;        jp.setLayout(new BoxLayout(jp, BoxLayout.LINE_AXIS));</b>
+<b class="nc"><i class="no-highlight">402</i>&nbsp;        jp.add(Box.createRigidArea(ra));</b>
+<b class="nc"><i class="no-highlight">403</i>&nbsp;        jp.add(new JLabel(&quot;LEVEL:&quot;));</b>
+<b class="nc"><i class="no-highlight">404</i>&nbsp;        jp.add(Box.createHorizontalGlue());</b>
+<b class="nc"><i class="no-highlight">405</i>&nbsp;        r.add(jp);</b>
+<i class="no-highlight">406</i>&nbsp;
+<b class="nc"><i class="no-highlight">407</i>&nbsp;        levelLabel = new JLabel(&quot;1&quot;);</b>
+<b class="nc"><i class="no-highlight">408</i>&nbsp;        levelLabel.setForeground(Color.BLUE);</b>
+<i class="no-highlight">409</i>&nbsp;
+<b class="nc"><i class="no-highlight">410</i>&nbsp;        jp = new JPanel();</b>
+<b class="nc"><i class="no-highlight">411</i>&nbsp;        jp.setLayout(new BoxLayout(jp, BoxLayout.LINE_AXIS));</b>
+<b class="nc"><i class="no-highlight">412</i>&nbsp;        jp.add(Box.createRigidArea(ra));</b>
+<b class="nc"><i class="no-highlight">413</i>&nbsp;        jp.add(levelLabel);</b>
+<b class="nc"><i class="no-highlight">414</i>&nbsp;        jp.add(Box.createHorizontalGlue());</b>
+<b class="nc"><i class="no-highlight">415</i>&nbsp;        r.add(jp);</b>
+<i class="no-highlight">416</i>&nbsp;
+<b class="nc"><i class="no-highlight">417</i>&nbsp;        jp = new JPanel();</b>
+<b class="nc"><i class="no-highlight">418</i>&nbsp;        jp.setLayout(new BoxLayout(jp, BoxLayout.LINE_AXIS));</b>
+<b class="nc"><i class="no-highlight">419</i>&nbsp;        jp.add(Box.createRigidArea(ra));</b>
+<b class="nc"><i class="no-highlight">420</i>&nbsp;        jp.add(new JLabel(&quot;TIME:&quot;));</b>
+<b class="nc"><i class="no-highlight">421</i>&nbsp;        jp.add(Box.createHorizontalGlue());</b>
+<b class="nc"><i class="no-highlight">422</i>&nbsp;        r.add(jp);</b>
+<i class="no-highlight">423</i>&nbsp;
+<b class="nc"><i class="no-highlight">424</i>&nbsp;        time = new JLabel(&quot;00:00:00&quot;);</b>
+<b class="nc"><i class="no-highlight">425</i>&nbsp;        time.setForeground(Color.BLUE);</b>
+<i class="no-highlight">426</i>&nbsp;
+<b class="nc"><i class="no-highlight">427</i>&nbsp;        jp = new JPanel();</b>
+<b class="nc"><i class="no-highlight">428</i>&nbsp;        jp.setLayout(new BoxLayout(jp, BoxLayout.LINE_AXIS));</b>
+<b class="nc"><i class="no-highlight">429</i>&nbsp;        jp.add(Box.createRigidArea(ra));</b>
+<b class="nc"><i class="no-highlight">430</i>&nbsp;        jp.add(time);</b>
+<b class="nc"><i class="no-highlight">431</i>&nbsp;        jp.add(Box.createHorizontalGlue());</b>
+<b class="nc"><i class="no-highlight">432</i>&nbsp;        r.add(jp);</b>
+<i class="no-highlight">433</i>&nbsp;
+<b class="nc"><i class="no-highlight">434</i>&nbsp;        r.add(Box.createVerticalGlue());</b>
+<i class="no-highlight">435</i>&nbsp;
+<b class="nc"><i class="no-highlight">436</i>&nbsp;        r.add(addHelpPanel(&quot;A or \u2190 - Left&quot;));</b>
+<b class="nc"><i class="no-highlight">437</i>&nbsp;        r.add(addHelpPanel(&quot;D or \u2192 - Right&quot;));</b>
+<b class="nc"><i class="no-highlight">438</i>&nbsp;        r.add(addHelpPanel(&quot;W or \u2191 - Rotate&quot;));</b>
+<b class="nc"><i class="no-highlight">439</i>&nbsp;        r.add(addHelpPanel(&quot;S or \u2193 - Down&quot;));</b>
+<b class="nc"><i class="no-highlight">440</i>&nbsp;        r.add(addHelpPanel(&quot;Space - Drop&quot;));</b>
+<i class="no-highlight">441</i>&nbsp;
+<i class="no-highlight">442</i>&nbsp;        //BUTTONS
+<b class="nc"><i class="no-highlight">443</i>&nbsp;        r.add(Box.createRigidArea(new Dimension(0, 10)));</b>
+<i class="no-highlight">444</i>&nbsp;
+<b class="nc"><i class="no-highlight">445</i>&nbsp;        jp = new JPanel();</b>
+<b class="nc"><i class="no-highlight">446</i>&nbsp;        jp.setLayout(new BoxLayout(jp, BoxLayout.LINE_AXIS));</b>
+<b class="nc"><i class="no-highlight">447</i>&nbsp;        jp.add(Box.createRigidArea(ra));</b>
+<b class="nc"><i class="no-highlight">448</i>&nbsp;        JButton restartBut = new JButton(&quot;Restart&quot;);</b>
+<b class="nc"><i class="no-highlight">449</i>&nbsp;        restartBut.setToolTipText(&quot;Press &#39;R&#39;&quot;);</b>
+<b class="nc"><i class="no-highlight">450</i>&nbsp;        restartBut.setFocusable(false);</b>
+<b class="nc"><i class="no-highlight">451</i>&nbsp;        restartBut.addKeyListener(keyHandler);</b>
+<b class="nc"><i class="no-highlight">452</i>&nbsp;        restartBut.addActionListener(new ActionListener() {</b>
+<i class="no-highlight">453</i>&nbsp;            public void actionPerformed(ActionEvent arg0) {
+<b class="nc"><i class="no-highlight">454</i>&nbsp;                restart();</b>
+<i class="no-highlight">455</i>&nbsp;            }
+<i class="no-highlight">456</i>&nbsp;        });
+<b class="nc"><i class="no-highlight">457</i>&nbsp;        d = new Dimension(90, 30);</b>
+<b class="nc"><i class="no-highlight">458</i>&nbsp;        restartBut.setMinimumSize(d);</b>
+<b class="nc"><i class="no-highlight">459</i>&nbsp;        restartBut.setPreferredSize(d);</b>
+<b class="nc"><i class="no-highlight">460</i>&nbsp;        restartBut.setMaximumSize(d);</b>
+<b class="nc"><i class="no-highlight">461</i>&nbsp;        jp.add(restartBut);</b>
+<b class="nc"><i class="no-highlight">462</i>&nbsp;        jp.add(Box.createHorizontalGlue());</b>
+<b class="nc"><i class="no-highlight">463</i>&nbsp;        r.add(jp);</b>
+<i class="no-highlight">464</i>&nbsp;
+<b class="nc"><i class="no-highlight">465</i>&nbsp;        r.add(Box.createRigidArea(new Dimension(0, 5)));</b>
+<i class="no-highlight">466</i>&nbsp;
+<b class="nc"><i class="no-highlight">467</i>&nbsp;        jp = new JPanel();</b>
+<b class="nc"><i class="no-highlight">468</i>&nbsp;        jp.setLayout(new BoxLayout(jp, BoxLayout.LINE_AXIS));</b>
+<b class="nc"><i class="no-highlight">469</i>&nbsp;        jp.add(Box.createRigidArea(ra));</b>
+<b class="nc"><i class="no-highlight">470</i>&nbsp;        JButton pauseBut = new JButton(&quot;Pause&quot;);</b>
+<b class="nc"><i class="no-highlight">471</i>&nbsp;        pauseBut.setToolTipText(&quot;Press &#39;P&#39;&quot;);</b>
+<b class="nc"><i class="no-highlight">472</i>&nbsp;        pauseBut.setFocusable(false);</b>
+<b class="nc"><i class="no-highlight">473</i>&nbsp;        pauseBut.addActionListener(new ActionListener() {</b>
+<i class="no-highlight">474</i>&nbsp;            public void actionPerformed(ActionEvent arg0) {
+<b class="nc"><i class="no-highlight">475</i>&nbsp;                pause();</b>
+<i class="no-highlight">476</i>&nbsp;            }
+<i class="no-highlight">477</i>&nbsp;        });
+<b class="nc"><i class="no-highlight">478</i>&nbsp;        pauseBut.setMinimumSize(d);</b>
+<b class="nc"><i class="no-highlight">479</i>&nbsp;        pauseBut.setPreferredSize(d);</b>
+<b class="nc"><i class="no-highlight">480</i>&nbsp;        pauseBut.setMaximumSize(d);</b>
+<b class="nc"><i class="no-highlight">481</i>&nbsp;        jp.add(pauseBut);</b>
+<b class="nc"><i class="no-highlight">482</i>&nbsp;        jp.add(Box.createHorizontalGlue());</b>
+<b class="nc"><i class="no-highlight">483</i>&nbsp;        r.add(jp);</b>
+<i class="no-highlight">484</i>&nbsp;
+<b class="nc"><i class="no-highlight">485</i>&nbsp;        return r;</b>
+<i class="no-highlight">486</i>&nbsp;    }
+<i class="no-highlight">487</i>&nbsp;
+<i class="no-highlight">488</i>&nbsp;    private JPanel addHelpPanel(String help) {
+<b class="nc"><i class="no-highlight">489</i>&nbsp;        JPanel jp = new JPanel();</b>
+<b class="nc"><i class="no-highlight">490</i>&nbsp;        jp.setLayout(new BoxLayout(jp, BoxLayout.LINE_AXIS));</b>
+<b class="nc"><i class="no-highlight">491</i>&nbsp;        jp.add(Box.createRigidArea(new Dimension(5, 0)));</b>
+<b class="nc"><i class="no-highlight">492</i>&nbsp;        JLabel jL = new JLabel(help);</b>
+<b class="nc"><i class="no-highlight">493</i>&nbsp;        jL.setFont(font);</b>
+<b class="nc"><i class="no-highlight">494</i>&nbsp;        jL.setForeground(Color.GRAY);</b>
+<b class="nc"><i class="no-highlight">495</i>&nbsp;        jp.add(jL);</b>
+<b class="nc"><i class="no-highlight">496</i>&nbsp;        jp.add(Box.createHorizontalGlue());</b>
+<b class="nc"><i class="no-highlight">497</i>&nbsp;        return jp;</b>
+<i class="no-highlight">498</i>&nbsp;    }
+<i class="no-highlight">499</i>&nbsp;
+<i class="no-highlight">500</i>&nbsp;    private JPanel getCopyrightPanel() {
+<b class="nc"><i class="no-highlight">501</i>&nbsp;        JPanel r = new JPanel(new BorderLayout());</b>
+<b class="nc"><i class="no-highlight">502</i>&nbsp;        BoxLayout rL = new BoxLayout(r, BoxLayout.X_AXIS);</b>
+<b class="nc"><i class="no-highlight">503</i>&nbsp;        r.setLayout(rL);</b>
+<b class="nc"><i class="no-highlight">504</i>&nbsp;        r.setBorder(new EtchedBorder());</b>
+<b class="nc"><i class="no-highlight">505</i>&nbsp;        r.add(Box.createRigidArea(new Dimension(80, 0)));</b>
+<i class="no-highlight">506</i>&nbsp;
+<b class="nc"><i class="no-highlight">507</i>&nbsp;        JLabel jL = new JLabel(&quot;Copyright (c) 2006 - 2015 Nikolay G. Georgiev &quot;);</b>
+<b class="nc"><i class="no-highlight">508</i>&nbsp;        jL.setFont(font);</b>
+<b class="nc"><i class="no-highlight">509</i>&nbsp;        r.add(jL);</b>
+<i class="no-highlight">510</i>&nbsp;
+<b class="nc"><i class="no-highlight">511</i>&nbsp;        return r;</b>
+<i class="no-highlight">512</i>&nbsp;    }
+<i class="no-highlight">513</i>&nbsp;
+<i class="no-highlight">514</i>&nbsp;    private JPanel getStatPanel() {
+<b class="nc"><i class="no-highlight">515</i>&nbsp;        int h = 12;</b>
+<b class="nc"><i class="no-highlight">516</i>&nbsp;        JPanel r = new JPanel();</b>
+<b class="nc"><i class="no-highlight">517</i>&nbsp;        BoxLayout rL = new BoxLayout(r, BoxLayout.Y_AXIS);</b>
+<b class="nc"><i class="no-highlight">518</i>&nbsp;        r.setLayout(rL);</b>
+<b class="nc"><i class="no-highlight">519</i>&nbsp;        r.setBorder(new EtchedBorder());</b>
+<i class="no-highlight">520</i>&nbsp;
+<i class="no-highlight">521</i>&nbsp;        JPanel[][] fig;
+<i class="no-highlight">522</i>&nbsp;        JPanel figP, statFP;
+<b class="nc"><i class="no-highlight">523</i>&nbsp;        Dimension d = new Dimension(4 * h, 4 * h);</b>
+<i class="no-highlight">524</i>&nbsp;        Figure f;
+<b class="nc"><i class="no-highlight">525</i>&nbsp;        statsF = new JLabel[7];</b>
+<b class="nc"><i class="no-highlight">526</i>&nbsp;        statsL = new JLabel[4];</b>
+<i class="no-highlight">527</i>&nbsp;
+<b class="nc"><i class="no-highlight">528</i>&nbsp;        JPanel jp = new JPanel();</b>
+<b class="nc"><i class="no-highlight">529</i>&nbsp;        jp.setLayout(new BoxLayout(jp, BoxLayout.LINE_AXIS));</b>
+<b class="nc"><i class="no-highlight">530</i>&nbsp;        jp.add(Box.createRigidArea(new Dimension(5, 0)));</b>
+<b class="nc"><i class="no-highlight">531</i>&nbsp;        jp.add(new JLabel(&quot;STATISTICS: &quot;));</b>
+<b class="nc"><i class="no-highlight">532</i>&nbsp;        jp.add(Box.createHorizontalGlue());</b>
+<b class="nc"><i class="no-highlight">533</i>&nbsp;        r.add(jp);</b>
+<i class="no-highlight">534</i>&nbsp;
+<b class="nc"><i class="no-highlight">535</i>&nbsp;        r.add(Box.createRigidArea(new Dimension(0, 5)));</b>
+<i class="no-highlight">536</i>&nbsp;
+<b class="nc"><i class="no-highlight">537</i>&nbsp;        for (int k = 0; k &lt; 7; k++) {</b>
+<b class="nc"><i class="no-highlight">538</i>&nbsp;            fig = new JPanel[4][4];</b>
+<b class="nc"><i class="no-highlight">539</i>&nbsp;            figP = new JPanel();</b>
+<b class="nc"><i class="no-highlight">540</i>&nbsp;            statFP = new JPanel();</b>
+<b class="nc"><i class="no-highlight">541</i>&nbsp;            statFP.setLayout(new BoxLayout(statFP, BoxLayout.LINE_AXIS));</b>
+<b class="nc"><i class="no-highlight">542</i>&nbsp;            figP.setLayout(new GridLayout(4, 4));</b>
+<b class="nc"><i class="no-highlight">543</i>&nbsp;            figP.setMinimumSize(d);</b>
+<b class="nc"><i class="no-highlight">544</i>&nbsp;            figP.setPreferredSize(d);</b>
+<b class="nc"><i class="no-highlight">545</i>&nbsp;            figP.setMaximumSize(d);</b>
+<i class="no-highlight">546</i>&nbsp;
+<b class="nc"><i class="no-highlight">547</i>&nbsp;            for (int i = 0; i &lt; 4; i++) {</b>
+<b class="nc"><i class="no-highlight">548</i>&nbsp;                for (int j = 0; j &lt; 4; j++) {</b>
+<b class="nc"><i class="no-highlight">549</i>&nbsp;                    fig[i][j] = new JPanel();</b>
+<b class="nc"><i class="no-highlight">550</i>&nbsp;                    fig[i][j].setBackground(nextBg);</b>
+<b class="nc"><i class="no-highlight">551</i>&nbsp;                    figP.add(fig[i][j]);</b>
+<i class="no-highlight">552</i>&nbsp;                }
+<i class="no-highlight">553</i>&nbsp;            }
+<i class="no-highlight">554</i>&nbsp;
+<b class="nc"><i class="no-highlight">555</i>&nbsp;            switch (k + 1) {</b>
+<i class="no-highlight">556</i>&nbsp;                case Figure.I:
+<b class="nc"><i class="no-highlight">557</i>&nbsp;                    f = new FigureI();</b>
+<b class="nc"><i class="no-highlight">558</i>&nbsp;                    f.setOffset(2, 0);</b>
+<b class="nc"><i class="no-highlight">559</i>&nbsp;                    break;</b>
+<i class="no-highlight">560</i>&nbsp;                case Figure.T:
+<b class="nc"><i class="no-highlight">561</i>&nbsp;                    f = new FigureT();</b>
+<b class="nc"><i class="no-highlight">562</i>&nbsp;                    f.setOffset(1, 1);</b>
+<b class="nc"><i class="no-highlight">563</i>&nbsp;                    break;</b>
+<i class="no-highlight">564</i>&nbsp;                case Figure.O:
+<b class="nc"><i class="no-highlight">565</i>&nbsp;                    f = new FigureO();</b>
+<b class="nc"><i class="no-highlight">566</i>&nbsp;                    f.setOffset(1, 1);</b>
+<b class="nc"><i class="no-highlight">567</i>&nbsp;                    break;</b>
+<i class="no-highlight">568</i>&nbsp;                case Figure.J:
+<b class="nc"><i class="no-highlight">569</i>&nbsp;                    f = new FigureJ();</b>
+<b class="nc"><i class="no-highlight">570</i>&nbsp;                    f.setOffset(1, 1);</b>
+<b class="nc"><i class="no-highlight">571</i>&nbsp;                    break;</b>
+<i class="no-highlight">572</i>&nbsp;                case Figure.L:
+<b class="nc"><i class="no-highlight">573</i>&nbsp;                    f = new FigureL();</b>
+<b class="nc"><i class="no-highlight">574</i>&nbsp;                    f.setOffset(1, 1);</b>
+<b class="nc"><i class="no-highlight">575</i>&nbsp;                    break;</b>
+<i class="no-highlight">576</i>&nbsp;                case Figure.S:
+<b class="nc"><i class="no-highlight">577</i>&nbsp;                    f = new FigureS();</b>
+<b class="nc"><i class="no-highlight">578</i>&nbsp;                    f.setOffset(1, 1);</b>
+<b class="nc"><i class="no-highlight">579</i>&nbsp;                    break;</b>
+<i class="no-highlight">580</i>&nbsp;                default:
+<b class="nc"><i class="no-highlight">581</i>&nbsp;                    f = new FigureZ();</b>
+<b class="nc"><i class="no-highlight">582</i>&nbsp;                    f.setOffset(1, 1);</b>
+<i class="no-highlight">583</i>&nbsp;                    break;
+<i class="no-highlight">584</i>&nbsp;            }
+<i class="no-highlight">585</i>&nbsp;
+<b class="nc"><i class="no-highlight">586</i>&nbsp;            for (int i = 0; i &lt; 4; i++) {</b>
+<b class="nc"><i class="no-highlight">587</i>&nbsp;                fig[f.arrY[i] + f.offsetY][f.arrX[i] + f.offsetX].setBackground(f.getColor());</b>
+<b class="nc"><i class="no-highlight">588</i>&nbsp;                fig[f.arrY[i] + f.offsetY][f.arrX[i] + f.offsetX].setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));</b>
+<i class="no-highlight">589</i>&nbsp;            }
+<b class="nc"><i class="no-highlight">590</i>&nbsp;            statFP.add(figP);</b>
+<b class="nc"><i class="no-highlight">591</i>&nbsp;            statFP.add(new JLabel(&quot;  X  &quot;));</b>
+<i class="no-highlight">592</i>&nbsp;
+<b class="nc"><i class="no-highlight">593</i>&nbsp;            statsF[k] = new JLabel(&quot;0&quot;);</b>
+<b class="nc"><i class="no-highlight">594</i>&nbsp;            statsF[k].setForeground(Color.BLUE);</b>
+<b class="nc"><i class="no-highlight">595</i>&nbsp;            statFP.add(statsF[k]);</b>
+<b class="nc"><i class="no-highlight">596</i>&nbsp;            r.add(statFP);</b>
+<i class="no-highlight">597</i>&nbsp;        }
+<i class="no-highlight">598</i>&nbsp;
+<b class="nc"><i class="no-highlight">599</i>&nbsp;        r.add(Box.createRigidArea(new Dimension(100, 15)));</b>
+<i class="no-highlight">600</i>&nbsp;
+<b class="nc"><i class="no-highlight">601</i>&nbsp;        for (int i = 0; i &lt; statsL.length; i++) {</b>
+<b class="nc"><i class="no-highlight">602</i>&nbsp;            statFP = new JPanel();</b>
+<b class="nc"><i class="no-highlight">603</i>&nbsp;            statFP.setLayout(new BoxLayout(statFP, BoxLayout.LINE_AXIS));</b>
+<b class="nc"><i class="no-highlight">604</i>&nbsp;            switch (i) {</b>
+<i class="no-highlight">605</i>&nbsp;                case 0:
+<b class="nc"><i class="no-highlight">606</i>&nbsp;                    statFP.add(new JLabel(&quot;  Single  X  &quot;));</b>
+<b class="nc"><i class="no-highlight">607</i>&nbsp;                    break;</b>
+<i class="no-highlight">608</i>&nbsp;                case 1:
+<b class="nc"><i class="no-highlight">609</i>&nbsp;                    statFP.add(new JLabel(&quot;Double  X  &quot;));</b>
+<b class="nc"><i class="no-highlight">610</i>&nbsp;                    break;</b>
+<i class="no-highlight">611</i>&nbsp;                case 2:
+<b class="nc"><i class="no-highlight">612</i>&nbsp;                    statFP.add(new JLabel(&quot;  Triple  X  &quot;));</b>
+<b class="nc"><i class="no-highlight">613</i>&nbsp;                    break;</b>
+<i class="no-highlight">614</i>&nbsp;                default:
+<b class="nc"><i class="no-highlight">615</i>&nbsp;                    statFP.add(new JLabel(&quot;  Tetris  X  &quot;));</b>
+<i class="no-highlight">616</i>&nbsp;                    break;
+<i class="no-highlight">617</i>&nbsp;            }
+<b class="nc"><i class="no-highlight">618</i>&nbsp;            statsL[i] = new JLabel(&quot;0&quot;);</b>
+<b class="nc"><i class="no-highlight">619</i>&nbsp;            statsL[i].setForeground(Color.BLUE);</b>
+<b class="nc"><i class="no-highlight">620</i>&nbsp;            statFP.add(statsL[i]);</b>
+<b class="nc"><i class="no-highlight">621</i>&nbsp;            r.add(statFP);</b>
+<b class="nc"><i class="no-highlight">622</i>&nbsp;            r.add(Box.createRigidArea(new Dimension(0, 5)));</b>
+<i class="no-highlight">623</i>&nbsp;        }
+<b class="nc"><i class="no-highlight">624</i>&nbsp;        return r;</b>
+<i class="no-highlight">625</i>&nbsp;    }
+<i class="no-highlight">626</i>&nbsp;
+<i class="no-highlight">627</i>&nbsp;    static Image loadImage(String imageName) {
+<i class="no-highlight">628</i>&nbsp;        try {
+<b class="nc"><i class="no-highlight">629</i>&nbsp;            ClassLoader classloader = Thread.currentThread().getContextClassLoader();</b>
+<b class="nc"><i class="no-highlight">630</i>&nbsp;            return ImageIO.read(new BufferedInputStream(</b>
+<b class="nc"><i class="no-highlight">631</i>&nbsp;                    classloader.getResourceAsStream(imageName)));</b>
+<b class="nc"><i class="no-highlight">632</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i class="no-highlight">633</i>&nbsp;            e.printStackTrace(System.out);</b>
+<b class="nc"><i class="no-highlight">634</i>&nbsp;            return null;</b>
+<i class="no-highlight">635</i>&nbsp;        }
+<i class="no-highlight">636</i>&nbsp;    }
+<i class="no-highlight">637</i>&nbsp;
+<i class="no-highlight">638</i>&nbsp;    private synchronized void nextMove() {
+<b class="nc"><i class="no-highlight">639</i>&nbsp;        f.setOffset(nextX, nextY);</b>
+<i class="no-highlight">640</i>&nbsp;
+<b class="nc"><i class="no-highlight">641</i>&nbsp;        if (tg.addFigure(f)) {</b>
+<b class="nc"><i class="no-highlight">642</i>&nbsp;            dropNext();</b>
+<b class="nc"><i class="no-highlight">643</i>&nbsp;            f.setOffset(nextX, nextY);</b>
+<b class="nc"><i class="no-highlight">644</i>&nbsp;            paintTG();</b>
+<i class="no-highlight">645</i>&nbsp;        } else {
+<b class="nc"><i class="no-highlight">646</i>&nbsp;            clearOldPosition();</b>
+<i class="no-highlight">647</i>&nbsp;        }
+<b class="nc"><i class="no-highlight">648</i>&nbsp;        paintNewPosition();</b>
+<i class="no-highlight">649</i>&nbsp;
+<b class="nc"><i class="no-highlight">650</i>&nbsp;        if (isGameOver) {</b>
+<b class="nc"><i class="no-highlight">651</i>&nbsp;            int tmp = tg.updateHiScore();</b>
+<b class="nc"><i class="no-highlight">652</i>&nbsp;            if (tmp &gt;= 0) {</b>
+<i class="no-highlight">653</i>&nbsp;
+<i class="no-highlight">654</i>&nbsp;                String s;
+<i class="no-highlight">655</i>&nbsp;
+<i class="no-highlight">656</i>&nbsp;                do {
+<b class="nc"><i class="no-highlight">657</i>&nbsp;                    s = JOptionPane.showInputDialog(this, &quot;Enter Your Name...\nMust be between 1 and 10 characters long&quot;, &quot;New HiScore &quot; + (tmp + 1) + &quot;. Place&quot;, JOptionPane.PLAIN_MESSAGE);</b>
+<b class="nc"><i class="no-highlight">658</i>&nbsp;                } while (s != null &amp;&amp; (s.length() &lt; 1 || s.length() &gt; 10));</b>
+<i class="no-highlight">659</i>&nbsp;
+<b class="nc"><i class="no-highlight">660</i>&nbsp;                if (s == null) {</b>
+<b class="nc"><i class="no-highlight">661</i>&nbsp;                    s = &quot;&lt;empty&gt;&quot;;</b>
+<i class="no-highlight">662</i>&nbsp;                }
+<i class="no-highlight">663</i>&nbsp;
+<b class="nc"><i class="no-highlight">664</i>&nbsp;                tg.saveHiScore(s, tmp);</b>
+<i class="no-highlight">665</i>&nbsp;
+<b class="nc"><i class="no-highlight">666</i>&nbsp;                if (tmp == 0)</b>
+<b class="nc"><i class="no-highlight">667</i>&nbsp;                    hiScoreLabel.setText(&quot;&quot; + tg.hiScore[0].score);</b>
+<i class="no-highlight">668</i>&nbsp;            }
+<i class="no-highlight">669</i>&nbsp;        }
+<i class="no-highlight">670</i>&nbsp;    }
+<i class="no-highlight">671</i>&nbsp;
+<i class="no-highlight">672</i>&nbsp;    private void clearOldPosition() {
+<b class="nc"><i class="no-highlight">673</i>&nbsp;        for (int j = 0; j &lt; 4; j++) {</b>
+<b class="nc"><i class="no-highlight">674</i>&nbsp;            cells[f.arrY[j] + f.offsetYLast][f.arrX[j] + f.offsetXLast].setBackground(Color.WHITE);</b>
+<b class="nc"><i class="no-highlight">675</i>&nbsp;            cells[f.arrY[j] + f.offsetYLast][f.arrX[j] + f.offsetXLast].setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));</b>
+<i class="no-highlight">676</i>&nbsp;        }
+<i class="no-highlight">677</i>&nbsp;    }
+<i class="no-highlight">678</i>&nbsp;
+<i class="no-highlight">679</i>&nbsp;    private void paintNewPosition() {
+<b class="nc"><i class="no-highlight">680</i>&nbsp;        for (int j = 0; j &lt; 4; j++) {</b>
+<b class="nc"><i class="no-highlight">681</i>&nbsp;            cells[f.arrY[j] + f.offsetY][f.arrX[j] + f.offsetX].setBackground(f.getColor());</b>
+<b class="nc"><i class="no-highlight">682</i>&nbsp;            cells[f.arrY[j] + f.offsetY][f.arrX[j] + f.offsetX].setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));</b>
+<i class="no-highlight">683</i>&nbsp;        }
+<i class="no-highlight">684</i>&nbsp;    }
+<i class="no-highlight">685</i>&nbsp;
+<i class="no-highlight">686</i>&nbsp;    private void paintTG() {
+<b class="nc"><i class="no-highlight">687</i>&nbsp;        int i = 0;</b>
+<i class="no-highlight">688</i>&nbsp;        Color c;
+<b class="nc"><i class="no-highlight">689</i>&nbsp;        for (int[] arr : tg.gLines) {</b>
+<b class="nc"><i class="no-highlight">690</i>&nbsp;            for (int j = 0; j &lt; arr.length; j++) {</b>
+<b class="nc"><i class="no-highlight">691</i>&nbsp;                if (arr[j] != 0) {</b>
+<b class="nc"><i class="no-highlight">692</i>&nbsp;                    switch (arr[j]) {</b>
+<i class="no-highlight">693</i>&nbsp;                        case Figure.I:
+<b class="nc"><i class="no-highlight">694</i>&nbsp;                            c = Figure.COL_I;</b>
+<b class="nc"><i class="no-highlight">695</i>&nbsp;                            break;</b>
+<i class="no-highlight">696</i>&nbsp;                        case Figure.T:
+<b class="nc"><i class="no-highlight">697</i>&nbsp;                            c = Figure.COL_T;</b>
+<b class="nc"><i class="no-highlight">698</i>&nbsp;                            break;</b>
+<i class="no-highlight">699</i>&nbsp;                        case Figure.O:
+<b class="nc"><i class="no-highlight">700</i>&nbsp;                            c = Figure.COL_O;</b>
+<b class="nc"><i class="no-highlight">701</i>&nbsp;                            break;</b>
+<i class="no-highlight">702</i>&nbsp;                        case Figure.J:
+<b class="nc"><i class="no-highlight">703</i>&nbsp;                            c = Figure.COL_J;</b>
+<b class="nc"><i class="no-highlight">704</i>&nbsp;                            break;</b>
+<i class="no-highlight">705</i>&nbsp;                        case Figure.L:
+<b class="nc"><i class="no-highlight">706</i>&nbsp;                            c = Figure.COL_L;</b>
+<b class="nc"><i class="no-highlight">707</i>&nbsp;                            break;</b>
+<i class="no-highlight">708</i>&nbsp;                        case Figure.S:
+<b class="nc"><i class="no-highlight">709</i>&nbsp;                            c = Figure.COL_S;</b>
+<b class="nc"><i class="no-highlight">710</i>&nbsp;                            break;</b>
+<i class="no-highlight">711</i>&nbsp;                        default:
+<b class="nc"><i class="no-highlight">712</i>&nbsp;                            c = Figure.COL_Z;</b>
+<i class="no-highlight">713</i>&nbsp;                            break;
+<i class="no-highlight">714</i>&nbsp;                    }
+<b class="nc"><i class="no-highlight">715</i>&nbsp;                    cells[i][j].setBackground(c);</b>
+<b class="nc"><i class="no-highlight">716</i>&nbsp;                    cells[i][j].setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));</b>
+<i class="no-highlight">717</i>&nbsp;                } else {
+<b class="nc"><i class="no-highlight">718</i>&nbsp;                    cells[i][j].setBackground(Color.WHITE);</b>
+<b class="nc"><i class="no-highlight">719</i>&nbsp;                    cells[i][j].setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));</b>
+<i class="no-highlight">720</i>&nbsp;                }
+<i class="no-highlight">721</i>&nbsp;            }
+<b class="nc"><i class="no-highlight">722</i>&nbsp;            i++;</b>
+<b class="nc"><i class="no-highlight">723</i>&nbsp;        }</b>
+<i class="no-highlight">724</i>&nbsp;    }
+<i class="no-highlight">725</i>&nbsp;
+<i class="no-highlight">726</i>&nbsp;    private void showNext(Figure f) {
+<b class="nc"><i class="no-highlight">727</i>&nbsp;        for (int i = 0; i &lt; 4; i++) {</b>
+<b class="nc"><i class="no-highlight">728</i>&nbsp;            for (int j = 0; j &lt; 4; j++) {</b>
+<b class="nc"><i class="no-highlight">729</i>&nbsp;                next[i][j].setBackground(nextBg);</b>
+<b class="nc"><i class="no-highlight">730</i>&nbsp;                next[i][j].setBorder(BorderFactory.createEmptyBorder());</b>
+<i class="no-highlight">731</i>&nbsp;            }
+<i class="no-highlight">732</i>&nbsp;        }
+<i class="no-highlight">733</i>&nbsp;
+<b class="nc"><i class="no-highlight">734</i>&nbsp;        for (int j = 0; j &lt; f.arrX.length; j++) {</b>
+<b class="nc"><i class="no-highlight">735</i>&nbsp;            next[f.arrY[j]][f.arrX[j]].setBackground(f.getColor());</b>
+<b class="nc"><i class="no-highlight">736</i>&nbsp;            next[f.arrY[j]][f.arrX[j]].setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));</b>
+<i class="no-highlight">737</i>&nbsp;        }
+<i class="no-highlight">738</i>&nbsp;    }
+<i class="no-highlight">739</i>&nbsp;
+<i class="no-highlight">740</i>&nbsp;    private void dropNext() {
+<b class="nc"><i class="no-highlight">741</i>&nbsp;        if (isGameOver) return;</b>
+<b class="nc"><i class="no-highlight">742</i>&nbsp;        nextX = 4;</b>
+<b class="nc"><i class="no-highlight">743</i>&nbsp;        nextY = 0;</b>
+<i class="no-highlight">744</i>&nbsp;
+<b class="nc"><i class="no-highlight">745</i>&nbsp;        score.setText(&quot;&quot; + tg.getScore());</b>
+<b class="nc"><i class="no-highlight">746</i>&nbsp;        lines.setText(&quot;&quot; + tg.getLines());</b>
+<b class="nc"><i class="no-highlight">747</i>&nbsp;        levelLabel.setText(tg.getLevel() + &quot; / 20&quot;);</b>
+<i class="no-highlight">748</i>&nbsp;
+<b class="nc"><i class="no-highlight">749</i>&nbsp;        f = fNext;</b>
+<b class="nc"><i class="no-highlight">750</i>&nbsp;        fNext = ff.getRandomFigure();</b>
+<b class="nc"><i class="no-highlight">751</i>&nbsp;        showNext(fNext);</b>
+<i class="no-highlight">752</i>&nbsp;
+<b class="nc"><i class="no-highlight">753</i>&nbsp;        isGameOver = tg.isGameOver(f);</b>
+<i class="no-highlight">754</i>&nbsp;
+<i class="no-highlight">755</i>&nbsp;
+<b class="nc"><i class="no-highlight">756</i>&nbsp;        isNewFigureDroped = true;</b>
+<b class="nc"><i class="no-highlight">757</i>&nbsp;        updateStats();</b>
+<i class="no-highlight">758</i>&nbsp;    }
+<i class="no-highlight">759</i>&nbsp;
+<i class="no-highlight">760</i>&nbsp;    private void moveLeft() {
+<b class="nc"><i class="no-highlight">761</i>&nbsp;        if (isGameOver || isPause) return;</b>
+<b class="nc"><i class="no-highlight">762</i>&nbsp;        if (nextX - 1 &gt;= 0) {</b>
+<b class="nc"><i class="no-highlight">763</i>&nbsp;            if (tg.isNextMoveValid(f, f.offsetX - 1, f.offsetY)) {</b>
+<b class="nc"><i class="no-highlight">764</i>&nbsp;                nextX--;</b>
+<b class="nc"><i class="no-highlight">765</i>&nbsp;                nextMove();</b>
+<i class="no-highlight">766</i>&nbsp;            }
+<i class="no-highlight">767</i>&nbsp;        }
+<i class="no-highlight">768</i>&nbsp;    }
+<i class="no-highlight">769</i>&nbsp;
+<i class="no-highlight">770</i>&nbsp;    private void moveRight() {
+<b class="nc"><i class="no-highlight">771</i>&nbsp;        if (isGameOver || isPause) return;</b>
+<b class="nc"><i class="no-highlight">772</i>&nbsp;        if (f.getMaxRightOffset() + 1 &lt; 10) {</b>
+<b class="nc"><i class="no-highlight">773</i>&nbsp;            if (tg.isNextMoveValid(f, f.offsetX + 1, f.offsetY)) {</b>
+<b class="nc"><i class="no-highlight">774</i>&nbsp;                nextX++;</b>
+<b class="nc"><i class="no-highlight">775</i>&nbsp;                nextMove();</b>
+<i class="no-highlight">776</i>&nbsp;            }
+<i class="no-highlight">777</i>&nbsp;        }
+<i class="no-highlight">778</i>&nbsp;    }
+<i class="no-highlight">779</i>&nbsp;
+<i class="no-highlight">780</i>&nbsp;    private synchronized void moveDown() {
+<b class="nc"><i class="no-highlight">781</i>&nbsp;        if (isGameOver || isPause) return;</b>
+<b class="nc"><i class="no-highlight">782</i>&nbsp;        nextY++;</b>
+<b class="nc"><i class="no-highlight">783</i>&nbsp;        nextMove();</b>
+<i class="no-highlight">784</i>&nbsp;    }
+<i class="no-highlight">785</i>&nbsp;
+<i class="no-highlight">786</i>&nbsp;    private synchronized void moveDrop() {
+<b class="nc"><i class="no-highlight">787</i>&nbsp;        if (isGameOver || isPause) return;</b>
+<i class="no-highlight">788</i>&nbsp;
+<b class="nc"><i class="no-highlight">789</i>&nbsp;        f.offsetYLast = f.offsetY;</b>
+<b class="nc"><i class="no-highlight">790</i>&nbsp;        f.offsetXLast = f.offsetX;</b>
+<b class="nc"><i class="no-highlight">791</i>&nbsp;        clearOldPosition();</b>
+<i class="no-highlight">792</i>&nbsp;
+<b class="nc"><i class="no-highlight">793</i>&nbsp;        while (tg.isNextMoveValid(f, f.offsetX, f.offsetY)) {</b>
+<b class="nc"><i class="no-highlight">794</i>&nbsp;            f.setOffset(f.offsetX, f.offsetY + 1);</b>
+<i class="no-highlight">795</i>&nbsp;        }
+<i class="no-highlight">796</i>&nbsp;
+<i class="no-highlight">797</i>&nbsp;
+<b class="nc"><i class="no-highlight">798</i>&nbsp;        tg.addFigure(f);</b>
+<b class="nc"><i class="no-highlight">799</i>&nbsp;        paintTG();</b>
+<b class="nc"><i class="no-highlight">800</i>&nbsp;        dropNext();</b>
+<b class="nc"><i class="no-highlight">801</i>&nbsp;        nextMove();</b>
+<i class="no-highlight">802</i>&nbsp;    }
+<i class="no-highlight">803</i>&nbsp;
+<i class="no-highlight">804</i>&nbsp;    private synchronized void rotation() {
+<b class="nc"><i class="no-highlight">805</i>&nbsp;        if (isGameOver || isPause) return;</b>
+<b class="nc"><i class="no-highlight">806</i>&nbsp;        for (int j = 0; j &lt; f.arrX.length; j++) {</b>
+<b class="nc"><i class="no-highlight">807</i>&nbsp;            cells[f.arrY[j] + f.offsetY][f.arrX[j] + f.offsetX].setBackground(Color.WHITE);</b>
+<b class="nc"><i class="no-highlight">808</i>&nbsp;            cells[f.arrY[j] + f.offsetY][f.arrX[j] + f.offsetX].setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));</b>
+<i class="no-highlight">809</i>&nbsp;        }
+<b class="nc"><i class="no-highlight">810</i>&nbsp;        f.rotationRight();</b>
+<b class="nc"><i class="no-highlight">811</i>&nbsp;        if (!tg.isNextMoveValid(f, f.offsetX, f.offsetY)) {</b>
+<b class="nc"><i class="no-highlight">812</i>&nbsp;            f.rotationLeft();</b>
+<i class="no-highlight">813</i>&nbsp;        }
+<b class="nc"><i class="no-highlight">814</i>&nbsp;        nextMove();</b>
+<i class="no-highlight">815</i>&nbsp;    }
+<i class="no-highlight">816</i>&nbsp;
+<i class="no-highlight">817</i>&nbsp;    private synchronized void pause() {
+<b class="nc"><i class="no-highlight">818</i>&nbsp;        isPause = !isPause;</b>
+<i class="no-highlight">819</i>&nbsp;    }
+<i class="no-highlight">820</i>&nbsp;
+<i class="no-highlight">821</i>&nbsp;    private void restart() {
+<b class="nc"><i class="no-highlight">822</i>&nbsp;        for (int i = 0; i &lt; 20; i++) {</b>
+<b class="nc"><i class="no-highlight">823</i>&nbsp;            for (int j = 0; j &lt; 10; j++) {</b>
+<b class="nc"><i class="no-highlight">824</i>&nbsp;                tg.gLines.get(i)[j] = 0;</b>
+<b class="nc"><i class="no-highlight">825</i>&nbsp;                cells[i][j].setBackground(Color.WHITE);</b>
+<b class="nc"><i class="no-highlight">826</i>&nbsp;                cells[i][j].setBorder(BorderFactory.createLineBorder(Color.LIGHT_GRAY));</b>
+<i class="no-highlight">827</i>&nbsp;            }
+<i class="no-highlight">828</i>&nbsp;        }
+<b class="nc"><i class="no-highlight">829</i>&nbsp;        ff.resetCounts();</b>
+<b class="nc"><i class="no-highlight">830</i>&nbsp;        isGameOver = false;</b>
+<b class="nc"><i class="no-highlight">831</i>&nbsp;        isPause = false;</b>
+<b class="nc"><i class="no-highlight">832</i>&nbsp;        fNext = ff.getRandomFigure();</b>
+<b class="nc"><i class="no-highlight">833</i>&nbsp;        tt.resetTime();</b>
+<b class="nc"><i class="no-highlight">834</i>&nbsp;        time.setText(&quot;00:00:00&quot;);</b>
+<b class="nc"><i class="no-highlight">835</i>&nbsp;        tg.resetStats();</b>
+<b class="nc"><i class="no-highlight">836</i>&nbsp;        dropNext();</b>
+<b class="nc"><i class="no-highlight">837</i>&nbsp;        nextMove();</b>
+<i class="no-highlight">838</i>&nbsp;    }
+<i class="no-highlight">839</i>&nbsp;
+<i class="no-highlight">840</i>&nbsp;    private void updateStats() {
+<b class="nc"><i class="no-highlight">841</i>&nbsp;        for (int i = 0; i &lt; statsF.length; i++) {</b>
+<b class="nc"><i class="no-highlight">842</i>&nbsp;            statsF[i].setText(&quot;&quot; + ff.getCounts()[i]);</b>
+<i class="no-highlight">843</i>&nbsp;        }
+<i class="no-highlight">844</i>&nbsp;
+<b class="nc"><i class="no-highlight">845</i>&nbsp;        for (int i = 0; i &lt; statsL.length; i++) {</b>
+<b class="nc"><i class="no-highlight">846</i>&nbsp;            statsL[i].setText(&quot;&quot; + tg.getDropLines()[i]);</b>
+<i class="no-highlight">847</i>&nbsp;        }
+<i class="no-highlight">848</i>&nbsp;    }
+<i class="no-highlight">849</i>&nbsp;
+<i class="no-highlight">850</i>&nbsp;    private void doHelp() {
+<b class="nc"><i class="no-highlight">851</i>&nbsp;        if (helpDialog == null) helpDialog = new HelpDialog(this);</b>
+<b class="nc"><i class="no-highlight">852</i>&nbsp;        helpDialog.show();</b>
+<i class="no-highlight">853</i>&nbsp;    }
+<i class="no-highlight">854</i>&nbsp;
+<i class="no-highlight">855</i>&nbsp;    private void doAbout() {
+<b class="nc"><i class="no-highlight">856</i>&nbsp;        if (about == null) setAboutPanel();</b>
+<b class="nc"><i class="no-highlight">857</i>&nbsp;        JOptionPane.showMessageDialog(this, about, &quot;ABOUT&quot;,</b>
+<i class="no-highlight">858</i>&nbsp;                JOptionPane.PLAIN_MESSAGE,
+<b class="nc"><i class="no-highlight">859</i>&nbsp;                new ImageIcon(loadImage(GV.IMG_FOLDER + &quot;jetris.png&quot;)));</b>
+<i class="no-highlight">860</i>&nbsp;    }
+<i class="no-highlight">861</i>&nbsp;
+<i class="no-highlight">862</i>&nbsp;    private void setAboutPanel() {
+<b class="nc"><i class="no-highlight">863</i>&nbsp;        about = new JPanel();</b>
+<b class="nc"><i class="no-highlight">864</i>&nbsp;        about.setLayout(new BoxLayout(about, BoxLayout.Y_AXIS));</b>
+<b class="nc"><i class="no-highlight">865</i>&nbsp;        JLabel jl = new JLabel(&quot;&lt;HTML&gt;&lt;B&gt;&quot; + GV.NAME + &quot; &quot; + GV.VERSION + &quot;&lt;/B&gt; Copyright (c) 2006 - 2015 Nikolay G. Georgiev&lt;/HTML&gt;&quot;);</b>
+<b class="nc"><i class="no-highlight">866</i>&nbsp;        jl.setFont(font);</b>
+<b class="nc"><i class="no-highlight">867</i>&nbsp;        about.add(jl);</b>
+<b class="nc"><i class="no-highlight">868</i>&nbsp;        about.add(Box.createVerticalStrut(10));</b>
+<i class="no-highlight">869</i>&nbsp;
+<b class="nc"><i class="no-highlight">870</i>&nbsp;        jl = new JLabel(&quot;WEB PAGE:&quot;);</b>
+<b class="nc"><i class="no-highlight">871</i>&nbsp;        jl.setFont(font);</b>
+<b class="nc"><i class="no-highlight">872</i>&nbsp;        about.add(jl);</b>
+<b class="nc"><i class="no-highlight">873</i>&nbsp;        HTMLLink hl = new HTMLLink(GV.WEB_PAGE, false);</b>
+<b class="nc"><i class="no-highlight">874</i>&nbsp;        hl.setFont(font);</b>
+<b class="nc"><i class="no-highlight">875</i>&nbsp;        about.add(hl);</b>
+<i class="no-highlight">876</i>&nbsp;
+<b class="nc"><i class="no-highlight">877</i>&nbsp;        about.add(Box.createVerticalStrut(20));</b>
+<i class="no-highlight">878</i>&nbsp;
+<b class="nc"><i class="no-highlight">879</i>&nbsp;        jl = new JLabel(&quot;&lt;HTML&gt;This program is released under the Mozilla Public License 2.0 .&lt;BR&gt; A copy of this is included with your copy of JETRIS&lt;BR&gt;and can also be found at:&lt;/HTML&gt;&quot;);</b>
+<b class="nc"><i class="no-highlight">880</i>&nbsp;        jl.setFont(font);</b>
+<b class="nc"><i class="no-highlight">881</i>&nbsp;        about.add(jl);</b>
+<b class="nc"><i class="no-highlight">882</i>&nbsp;        about.add(jl);</b>
+<b class="nc"><i class="no-highlight">883</i>&nbsp;        hl = new HTMLLink(&quot;https://www.mozilla.org/MPL/2.0/&quot;, false);</b>
+<b class="nc"><i class="no-highlight">884</i>&nbsp;        hl.setFont(font);</b>
+<b class="nc"><i class="no-highlight">885</i>&nbsp;        about.add(hl);</b>
+<i class="no-highlight">886</i>&nbsp;    }
+<i class="no-highlight">887</i>&nbsp;
+<i class="no-highlight">888</i>&nbsp;    private void showHiScore() {
+<b class="nc"><i class="no-highlight">889</i>&nbsp;        setHiScorePanel();</b>
+<i class="no-highlight">890</i>&nbsp;
+<b class="nc"><i class="no-highlight">891</i>&nbsp;        JOptionPane.showMessageDialog(this, hiScorePanel, &quot;HI SCORE&quot;,</b>
+<i class="no-highlight">892</i>&nbsp;                JOptionPane.PLAIN_MESSAGE,
+<b class="nc"><i class="no-highlight">893</i>&nbsp;                new ImageIcon(loadImage(GV.IMG_FOLDER + &quot;jetris32x32.png&quot;)));</b>
+<i class="no-highlight">894</i>&nbsp;
+<b class="nc"><i class="no-highlight">895</i>&nbsp;        hiScorePanel = null;</b>
+<i class="no-highlight">896</i>&nbsp;    }
+<i class="no-highlight">897</i>&nbsp;
+<i class="no-highlight">898</i>&nbsp;
+<i class="no-highlight">899</i>&nbsp;    private void setHiScorePanel() {
+<b class="nc"><i class="no-highlight">900</i>&nbsp;        hiScorePanel = new JPanel(new BorderLayout());</b>
+<i class="no-highlight">901</i>&nbsp;
+<b class="nc"><i class="no-highlight">902</i>&nbsp;        String[] colNames = {&quot;Place&quot;, &quot;Points&quot;, &quot;Lines&quot;, &quot;Name&quot;};</b>
+<b class="nc"><i class="no-highlight">903</i>&nbsp;        String[][] data = new String[tg.hiScore.length + 1][colNames.length];</b>
+<b class="nc"><i class="no-highlight">904</i>&nbsp;        data[0] = colNames;</b>
+<b class="nc"><i class="no-highlight">905</i>&nbsp;        for (int i = 0; i &lt; tg.hiScore.length; i++) {</b>
+<b class="nc"><i class="no-highlight">906</i>&nbsp;            data[i + 1] = new String[colNames.length];</b>
+<b class="nc"><i class="no-highlight">907</i>&nbsp;            data[i + 1][0] = (i + 1) + &quot;.&quot;;</b>
+<b class="nc"><i class="no-highlight">908</i>&nbsp;            data[i + 1][1] = (&quot;&quot; + tg.hiScore[i].score);</b>
+<b class="nc"><i class="no-highlight">909</i>&nbsp;            data[i + 1][2] = (&quot;&quot; + tg.hiScore[i].lines);</b>
+<b class="nc"><i class="no-highlight">910</i>&nbsp;            data[i + 1][3] = (&quot;&quot; + tg.hiScore[i].name);</b>
+<i class="no-highlight">911</i>&nbsp;        }
+<i class="no-highlight">912</i>&nbsp;
+<b class="nc"><i class="no-highlight">913</i>&nbsp;        JTable table = new JTable(data, colNames);</b>
+<b class="nc"><i class="no-highlight">914</i>&nbsp;        table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);</b>
+<b class="nc"><i class="no-highlight">915</i>&nbsp;        table.setBackground(new Color(230, 255, 255));</b>
+<b class="nc"><i class="no-highlight">916</i>&nbsp;        table.setEnabled(false);</b>
+<i class="no-highlight">917</i>&nbsp;
+<b class="nc"><i class="no-highlight">918</i>&nbsp;        hiScorePanel.add(table, BorderLayout.CENTER);</b>
+<i class="no-highlight">919</i>&nbsp;    }
+<i class="no-highlight">920</i>&nbsp;
+<b class="nc"><i class="no-highlight">921</i>&nbsp;    private class MenuHandler implements ActionListener {</b>
+<i class="no-highlight">922</i>&nbsp;
+<i class="no-highlight">923</i>&nbsp;        public void actionPerformed(ActionEvent e) {
+<i class="no-highlight">924</i>&nbsp;            try {
+<b class="nc"><i class="no-highlight">925</i>&nbsp;                JMenuItem tmp = (JMenuItem) e.getSource();</b>
+<b class="nc"><i class="no-highlight">926</i>&nbsp;                if (tmp == jetrisRestart) {</b>
+<b class="nc"><i class="no-highlight">927</i>&nbsp;                    restart();</b>
+<b class="nc"><i class="no-highlight">928</i>&nbsp;                } else if (tmp == jetrisPause) {</b>
+<b class="nc"><i class="no-highlight">929</i>&nbsp;                    pause();</b>
+<b class="nc"><i class="no-highlight">930</i>&nbsp;                } else if (tmp == jetrisHiScore) {</b>
+<b class="nc"><i class="no-highlight">931</i>&nbsp;                    showHiScore();</b>
+<b class="nc"><i class="no-highlight">932</i>&nbsp;                } else if (tmp == jetrisExit) {</b>
+<b class="nc"><i class="no-highlight">933</i>&nbsp;                    System.exit(0);</b>
+<b class="nc"><i class="no-highlight">934</i>&nbsp;                } else if (tmp == helpJetris) {</b>
+<b class="nc"><i class="no-highlight">935</i>&nbsp;                    doHelp();</b>
+<b class="nc"><i class="no-highlight">936</i>&nbsp;                } else if (tmp == helpAbout) {</b>
+<b class="nc"><i class="no-highlight">937</i>&nbsp;                    doAbout();</b>
+<i class="no-highlight">938</i>&nbsp;                }
+<b class="nc"><i class="no-highlight">939</i>&nbsp;            } catch (Exception exc) {</b>
+<b class="nc"><i class="no-highlight">940</i>&nbsp;                exc.printStackTrace(System.out);</b>
+<b class="nc"><i class="no-highlight">941</i>&nbsp;            }</b>
+<i class="no-highlight">942</i>&nbsp;        }
+<i class="no-highlight">943</i>&nbsp;    }
+<i class="no-highlight">944</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-04-25 21:35</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,209 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > HTMLLink</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+    @import "../../.css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../.js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.devng.jetris</a>
+</div>
+
+<h1>Coverage Summary for Class: HTMLLink (com.devng.jetris)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">HTMLLink</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/22)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">HTMLLink$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/23)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;/* HTMLLink created on 19.09.2006 */
+<i class="no-highlight">2</i>&nbsp;package com.devng.jetris;
+<i class="no-highlight">3</i>&nbsp;
+<i class="no-highlight">4</i>&nbsp;import javax.swing.*;
+<i class="no-highlight">5</i>&nbsp;import java.awt.*;
+<i class="no-highlight">6</i>&nbsp;import java.awt.datatransfer.Clipboard;
+<i class="no-highlight">7</i>&nbsp;import java.awt.datatransfer.ClipboardOwner;
+<i class="no-highlight">8</i>&nbsp;import java.awt.datatransfer.StringSelection;
+<i class="no-highlight">9</i>&nbsp;import java.awt.datatransfer.Transferable;
+<i class="no-highlight">10</i>&nbsp;import java.awt.event.MouseEvent;
+<i class="no-highlight">11</i>&nbsp;import java.awt.event.MouseListener;
+<i class="no-highlight">12</i>&nbsp;import java.net.URL;
+<i class="no-highlight">13</i>&nbsp;
+<i class="no-highlight">14</i>&nbsp;public class HTMLLink extends JLabel implements MouseListener {
+<i class="no-highlight">15</i>&nbsp;
+<i class="no-highlight">16</i>&nbsp;    private final String url;
+<i class="no-highlight">17</i>&nbsp;
+<i class="no-highlight">18</i>&nbsp;    private final boolean useDesktopApp;
+<i class="no-highlight">19</i>&nbsp;
+<i class="no-highlight">20</i>&nbsp;    private final Desktop desktop;
+<i class="no-highlight">21</i>&nbsp;
+<i class="no-highlight">22</i>&nbsp;    public HTMLLink(String url, boolean isMail) {
+<b class="nc"><i class="no-highlight">23</i>&nbsp;        super(url);</b>
+<b class="nc"><i class="no-highlight">24</i>&nbsp;        this.url = isMail ? &quot;mailto:&quot; + url : url;</b>
+<i class="no-highlight">25</i>&nbsp;
+<b class="nc"><i class="no-highlight">26</i>&nbsp;        this.desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;</b>
+<b class="nc"><i class="no-highlight">27</i>&nbsp;        final Desktop.Action action = isMail ? Desktop.Action.MAIL : Desktop.Action.BROWSE;</b>
+<b class="nc"><i class="no-highlight">28</i>&nbsp;        useDesktopApp = desktop != null &amp;&amp; desktop.isSupported(action);</b>
+<i class="no-highlight">29</i>&nbsp;
+<b class="nc"><i class="no-highlight">30</i>&nbsp;        if (useDesktopApp) {</b>
+<b class="nc"><i class="no-highlight">31</i>&nbsp;            setToolTipText(url);</b>
+<i class="no-highlight">32</i>&nbsp;        } else {
+<b class="nc"><i class="no-highlight">33</i>&nbsp;            setToolTipText(&quot;Copy link to Clipboard&quot;);</b>
+<i class="no-highlight">34</i>&nbsp;        }
+<b class="nc"><i class="no-highlight">35</i>&nbsp;        setForeground(Color.BLUE);</b>
+<b class="nc"><i class="no-highlight">36</i>&nbsp;        addMouseListener(this);</b>
+<i class="no-highlight">37</i>&nbsp;    }
+<i class="no-highlight">38</i>&nbsp;
+<i class="no-highlight">39</i>&nbsp;    private void startDesktopApp() {
+<i class="no-highlight">40</i>&nbsp;        try {
+<b class="nc"><i class="no-highlight">41</i>&nbsp;            desktop.browse(new URL(url).toURI());</b>
+<b class="nc"><i class="no-highlight">42</i>&nbsp;        } catch (Exception e) {</b>
+<b class="nc"><i class="no-highlight">43</i>&nbsp;            e.printStackTrace();</b>
+<b class="nc"><i class="no-highlight">44</i>&nbsp;        }</b>
+<i class="no-highlight">45</i>&nbsp;    }
+<i class="no-highlight">46</i>&nbsp;
+<i class="no-highlight">47</i>&nbsp;    private void copyToClipboard() {
+<b class="nc"><i class="no-highlight">48</i>&nbsp;        Clipboard c = java.awt.Toolkit.getDefaultToolkit().getSystemClipboard();</b>
+<b class="nc"><i class="no-highlight">49</i>&nbsp;        Transferable t = new StringSelection(url);</b>
+<i class="no-highlight">50</i>&nbsp;
+<b class="nc"><i class="no-highlight">51</i>&nbsp;        c.setContents(t, new ClipboardOwner() {</b>
+<i class="no-highlight">52</i>&nbsp;            public void lostOwnership(Clipboard c, Transferable t) {
+<i class="no-highlight">53</i>&nbsp;            }
+<i class="no-highlight">54</i>&nbsp;        });
+<i class="no-highlight">55</i>&nbsp;    }
+<i class="no-highlight">56</i>&nbsp;
+<i class="no-highlight">57</i>&nbsp;    public void mouseClicked(MouseEvent arg0) {
+<b class="nc"><i class="no-highlight">58</i>&nbsp;        if (useDesktopApp) {</b>
+<b class="nc"><i class="no-highlight">59</i>&nbsp;            startDesktopApp();</b>
+<i class="no-highlight">60</i>&nbsp;        } else {
+<b class="nc"><i class="no-highlight">61</i>&nbsp;            copyToClipboard();</b>
+<i class="no-highlight">62</i>&nbsp;        }
+<i class="no-highlight">63</i>&nbsp;    }
+<i class="no-highlight">64</i>&nbsp;
+<i class="no-highlight">65</i>&nbsp;    public void mousePressed(MouseEvent arg0) {
+<i class="no-highlight">66</i>&nbsp;    }
+<i class="no-highlight">67</i>&nbsp;
+<i class="no-highlight">68</i>&nbsp;    public void mouseReleased(MouseEvent arg0) {
+<i class="no-highlight">69</i>&nbsp;    }
+<i class="no-highlight">70</i>&nbsp;
+<i class="no-highlight">71</i>&nbsp;    public void mouseEntered(MouseEvent arg0) {
+<b class="nc"><i class="no-highlight">72</i>&nbsp;        setForeground(Color.RED);</b>
+<i class="no-highlight">73</i>&nbsp;    }
+<i class="no-highlight">74</i>&nbsp;
+<i class="no-highlight">75</i>&nbsp;    public void mouseExited(MouseEvent arg0) {
+<b class="nc"><i class="no-highlight">76</i>&nbsp;        setForeground(Color.BLUE);</b>
+<i class="no-highlight">77</i>&nbsp;    }
+<i class="no-highlight">78</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-04-25 21:35</div>
+</div>
+</body>
+</html>
