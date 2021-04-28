@@ -109,6 +109,8 @@ Once the configuration is set up, select Run > Run ... with Coverage from the ma
 coverage report, select Run > Generate Coverage Report from the main menu. The coverage report is currently saved
 in _test_report_.
 
+GUI tests and documentation can be found [here](https://drive.google.com/drive/folders/16DbAtCUBh8slb671rMDFMvpw0DzzAspV)
+
 ### Common errors
 > Execution failed for task ':test'
 > 
